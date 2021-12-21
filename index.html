@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; IRIS Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quick_start.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-3.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IRIS Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quick_start.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="operations/index.html">
+   Operations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/api.html">
+     API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/reports.html">
+     Reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/tutorials.html">
+     Tutorials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="development/index.html">
+   Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development/dev_docs.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development/dev_modules.html">
+     Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qa.html">
+   Q&amp;A
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-questions-you-might-have">
+     Some questions you might have
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-can-i-do-with-iris">
+       What can I do with Iris ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-can-i-not-do-with-iris">
+       What can I not do with Iris ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-iris-is-made-of">
+       What Iris is made of ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#can-i-be-involved">
+       Can I be involved ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-s-behind-iris">
+       How’s behind Iris ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-was-iris-published">
+       Why was Iris published ?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Iris stands for Incident Response Investigation System. In a nutshell, it’s a collaborative platform for incident response analysts allowing to share investigations at a technical level.
+It’s web application, so it can be either installed on a fixed-server, or on a laptop for roaming investigations where internet might not be available.</p>
+<p>It is born following the struggle to share long and complex investigations among analysts. Most of the current similar platforms are either commercial or targeting the incident handling and triage steps, not the investigation itself.</p>
+<div class="note admonition">
+<p class="admonition-title">I’ve read enough, I want to try it</p>
+<p>Iris comes in dockers - you need Docker Compose and you’ll be set in a few minutes.
+Follow <a class="reference internal" href="quick_start.html#quick-start"><span class="std std-ref">the guide</span></a>.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Disclaimer</p>
+<p>Iris is in its early stage. It can already be used in production, but please set backups of the database and DO NOT expose the interface on the Internet.
+We highly recommended to use a private dedicated and secure network.</p>
+</div>
+</div>
+<div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html#pre-requisites">1. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html#build">2. Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html#run">3. Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operations/index.html">Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operations/api.html">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operations/modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operations/reports.html">Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operations/tutorials.html">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development/dev_docs.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development/dev_modules.html">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#integration">Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#cases">Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qa.html">Q&amp;A</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qa.html#cases">Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qa.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qa.html#integration">Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qa.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qa.html#misc">MISC</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="some-questions-you-might-have">
+<h2>Some questions you might have<a class="headerlink" href="#some-questions-you-might-have" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-can-i-do-with-iris">
+<h3>What can I do with Iris ?<a class="headerlink" href="#what-can-i-do-with-iris" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>You can :</dt><dd><ul class="simple">
+<li><p>Run investigations with as many analysts as you want. Everyone has its own account</p></li>
+<li><p>Run as many investigations as you want in parallel</p></li>
+<li><dl class="simple">
+<dt>For each investigation:</dt><dd><ul>
+<li><p>Associate a customer</p></li>
+<li><p>Create a high level summary</p></li>
+<li><p>Create notes under the form of a Kandan board</p></li>
+<li><p>Create IOCs</p></li>
+<li><p>Create assets (computers, servers, accounts, firewalls, or anything you want)</p></li>
+<li><p>Associate IOCs with assets</p></li>
+<li><p>Obtain insights on assets and IOCs previously encountered in investigations</p></li>
+<li><p>Create a proper timeline referencing assets and IOCs</p></li>
+<li><p>Create an automated graph of the attack from the timeline</p></li>
+<li><p>Register evidences</p></li>
+<li><p>Upload and process of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser)</p></li>
+<li><p>Set and attribute tasks to people to keep track of everything</p></li>
+<li><p>Register every steps of the investigation</p></li>
+<li><p>Generate a report based on templates, automatically filled with the elements registered in the investigation</p></li>
+<li><p>Generate a report of activity with every steps registered as well as the auto-registered entries for each analyst</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Search notes and IOCs across all investigations</p></li>
+<li><p>Develop your own module and pipeline to process evidences and fit your needs. These are processed through RabbitMQ.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="what-can-i-not-do-with-iris">
+<h3>What can I not do with Iris ?<a class="headerlink" href="#what-can-i-not-do-with-iris" title="Permalink to this headline">¶</a></h3>
+<p>This is the part where we need you. Iris aims to be a collaborative project, so any idea is welcome.
+You can head to the Github of the project and create an issue with the idea.</p>
+</div>
+<div class="section" id="what-iris-is-made-of">
+<h3>What Iris is made of ?<a class="headerlink" href="#what-iris-is-made-of" title="Permalink to this headline">¶</a></h3>
+<p>Iris is mostly coded in Python 3. There is also some HTML, CSS and javascript for the interface.</p>
+<dl class="simple">
+<dt>Under the hood, Iris relies on :</dt><dd><ul class="simple">
+<li><p>Flask for the web engine</p></li>
+<li><p>SQLAlchemy and PostgresSQL for the database</p></li>
+<li><p>RabbitMQ for the jobs processing</p></li>
+<li><p>Nginx for the reverse proxy</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="can-i-be-involved">
+<h3>Can I be involved ?<a class="headerlink" href="#can-i-be-involved" title="Permalink to this headline">¶</a></h3>
+<p>Absolutely. You can either <a class="reference external" href="mailto:contact&#37;&#52;&#48;dfir-iris&#46;org">contact us</a> directly or submit pull requests and ideas on the GitHub.</p>
+</div>
+<div class="section" id="how-s-behind-iris">
+<h3>How’s behind Iris ?<a class="headerlink" href="#how-s-behind-iris" title="Permalink to this headline">¶</a></h3>
+<p>The idea was born in the French CSIRT of Airbus Cybersecurity, and created by a small group of friendly incident response analysts. Iris has been used since its early stage in 2020, on more than a hundred investigations including complex cyberattacks.</p>
+</div>
+<div class="section" id="why-was-iris-published">
+<h3>Why was Iris published ?<a class="headerlink" href="#why-was-iris-published" title="Permalink to this headline">¶</a></h3>
+<p>We felt a gap and we wanted to fill it. We believe open source tools driven by communities can only make them better.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="quick_start.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Quick Start</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Airbus CyberSecurity<br/>
+        
+            &copy; Copyright 2021, Airbus CyberSecurity.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

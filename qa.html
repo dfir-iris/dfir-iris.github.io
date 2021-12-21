@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q &amp; A &#8212; IRIS Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Roadmap" href="roadmap.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-3.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IRIS Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quick_start.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="operations/index.html">
+   Operations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/api.html">
+     API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/reports.html">
+     Reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operations/tutorials.html">
+     Tutorials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="development/index.html">
+   Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development/dev_docs.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development/dev_modules.html">
+     Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Q&amp;A
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/qa.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cases">
+   Cases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-recover-a-deleted-case">
+     Can I recover a deleted case ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-recover-a-deleted-case-object">
+     Can I recover a deleted case object ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-add-a-new-asset-type">
+     Can I add a new asset type ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-add-a-new-ioc-type">
+     Can I add a new IOC type ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-create-two-cases-with-the-same-name-for-the-same-customer">
+     Can I create two cases with the same name for the same customer ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-restrict-the-view-of-case-to-a-set-of-users">
+     Can I restrict the view of case to a set of users ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-change-the-name-or-customer-of-an-existing-case">
+     Can I change the name or customer of an existing case ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations">
+   Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-password-policy-can-it-be-changed">
+     What is the password policy ? Can it be changed ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-change-my-profile-picture">
+     Can I change my profile picture ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-lost-the-administrator-password-can-i-recover-it">
+     I lost the administrator password, can I recover it ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-delete-a-user">
+     Can I delete a user ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-delete-a-customer">
+     Can I delete a customer ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-create-organizations-or-groups">
+     Can I create organizations or groups ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-create-more-roles">
+     Can I create more roles ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-prevent-backrefs-of-assets-and-iocs">
+     Can I prevent backrefs of assets and IOCs ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#my-report-template-is-not-generated-and-generates-an-error">
+     My report template is not generated and generates an error
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration">
+   Integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-enrich-iocs-with-external-sources">
+     Can I enrich IOCs with external sources ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-there-an-api-client">
+     Is there an API client ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#security">
+   Security
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-restrict-cases">
+     Can I restrict cases ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-expose-iris-on-the-internet">
+     Can I expose IRIS on the Internet ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-found-a-security-issue-can-i-have-a-bounty">
+     I found a security issue, can I have a bounty ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#misc">
+   MISC
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-iris-stands-for">
+     What does IRIS stands for ?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="q-a">
+<h1>Q &amp; A<a class="headerlink" href="#q-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cases">
+<h2>Cases<a class="headerlink" href="#cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-i-recover-a-deleted-case">
+<h3>Can I recover a deleted case ?<a class="headerlink" href="#can-i-recover-a-deleted-case" title="Permalink to this headline">¶</a></h3>
+<p>No. Cases are deleted from the database and changes are committed.
+There is no coming back unless you have made backups of the database (which we recommend).</p>
+</div>
+<div class="section" id="can-i-recover-a-deleted-case-object">
+<h3>Can I recover a deleted case object ?<a class="headerlink" href="#can-i-recover-a-deleted-case-object" title="Permalink to this headline">¶</a></h3>
+<p>No. Every object such as IOCs, assets, events, notes, etc are immediately deleted from the database and changes are committed.</p>
+</div>
+<div class="section" id="can-i-add-a-new-asset-type">
+<h3>Can I add a new asset type ?<a class="headerlink" href="#can-i-add-a-new-asset-type" title="Permalink to this headline">¶</a></h3>
+<p>Yes. From a user with administrative rights, go to Advanced &gt; Assets Types.</p>
+</div>
+<div class="section" id="can-i-add-a-new-ioc-type">
+<h3>Can I add a new IOC type ?<a class="headerlink" href="#can-i-add-a-new-ioc-type" title="Permalink to this headline">¶</a></h3>
+<p>No, not yet. But it might be possible in future versions.</p>
+</div>
+<div class="section" id="can-i-create-two-cases-with-the-same-name-for-the-same-customer">
+<h3>Can I create two cases with the same name for the same customer ?<a class="headerlink" href="#can-i-create-two-cases-with-the-same-name-for-the-same-customer" title="Permalink to this headline">¶</a></h3>
+<p>Yes. Cases are identified with a unique number, so they can have the same name.</p>
+</div>
+<div class="section" id="can-i-restrict-the-view-of-case-to-a-set-of-users">
+<h3>Can I restrict the view of case to a set of users ?<a class="headerlink" href="#can-i-restrict-the-view-of-case-to-a-set-of-users" title="Permalink to this headline">¶</a></h3>
+<p>No. Please see Security.</p>
+</div>
+<div class="section" id="can-i-change-the-name-or-customer-of-an-existing-case">
+<h3>Can I change the name or customer of an existing case ?<a class="headerlink" href="#can-i-change-the-name-or-customer-of-an-existing-case" title="Permalink to this headline">¶</a></h3>
+<p>These changes are not possible for now but it might be implemented in future versions.</p>
+</div>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-the-password-policy-can-it-be-changed">
+<h3>What is the password policy ? Can it be changed ?<a class="headerlink" href="#what-is-the-password-policy-can-it-be-changed" title="Permalink to this headline">¶</a></h3>
+<p>For now the password policy is hardcoded and cannot be changed.
+It should be 12 characters minimum and contains a capital letter and a number.</p>
+</div>
+<div class="section" id="can-i-change-my-profile-picture">
+<h3>Can I change my profile picture ?<a class="headerlink" href="#can-i-change-my-profile-picture" title="Permalink to this headline">¶</a></h3>
+<p>No, not for now. This wasn’t a priority for us, it will be release in future versions.</p>
+</div>
+<div class="section" id="i-lost-the-administrator-password-can-i-recover-it">
+<h3>I lost the administrator password, can I recover it ?<a class="headerlink" href="#i-lost-the-administrator-password-can-i-recover-it" title="Permalink to this headline">¶</a></h3>
+<p>Passwords are hashed so they can’t be recovered. But you can change it.</p>
+<p><strong>If you have another admin user</strong></p>
+<p>Being logged as this user, simply head to the Advanced &gt; Users section, and change the administrator password.</p>
+<p><strong>If you don’t have another admin user</strong></p>
+<p>You can’t do the change via Iris, you need to update the DB manually.</p>
+<div class="warning admonition">
+<p class="admonition-title"><strong>ATTENTION</strong></p>
+<blockquote>
+<div><p>Do not delete and recreate the user ! This will create inconsistencies in the relations and might corrupt everything.</p>
+</div></blockquote>
+</div>
+<ol class="arabic simple">
+<li><p>Generate the hash of the new password with Python BCrypt</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bcrypt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_password</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Connect to the Postgresql database <cite>iris_db</cite> and update the password</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/ <span class="c1"># su postgres</span>
+/ <span class="c1"># psql</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \c iris_db</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># UPDATE user SET password = &#39;&lt;hash&gt;&#39; WHERE &quot;user&quot;.name == &#39;administrator&#39;;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="can-i-delete-a-user">
+<h3>Can I delete a user ?<a class="headerlink" href="#can-i-delete-a-user" title="Permalink to this headline">¶</a></h3>
+<p>No. To keep consistencies in the database, users unfortunately cannot be deleted if they have done some activities.</p>
+</div>
+<div class="section" id="can-i-delete-a-customer">
+<h3>Can I delete a customer ?<a class="headerlink" href="#can-i-delete-a-customer" title="Permalink to this headline">¶</a></h3>
+<p>No. To keep consistencies in the database, customers unfortunately cannot be deleted if they are linked to cases.</p>
+</div>
+<div class="section" id="can-i-create-organizations-or-groups">
+<h3>Can I create organizations or groups ?<a class="headerlink" href="#can-i-create-organizations-or-groups" title="Permalink to this headline">¶</a></h3>
+<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases.</p>
+</div>
+<div class="section" id="can-i-create-more-roles">
+<h3>Can I create more roles ?<a class="headerlink" href="#can-i-create-more-roles" title="Permalink to this headline">¶</a></h3>
+<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases.</p>
+</div>
+<div class="section" id="can-i-prevent-backrefs-of-assets-and-iocs">
+<h3>Can I prevent backrefs of assets and IOCs ?<a class="headerlink" href="#can-i-prevent-backrefs-of-assets-and-iocs" title="Permalink to this headline">¶</a></h3>
+<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases.</p>
+</div>
+<div class="section" id="my-report-template-is-not-generated-and-generates-an-error">
+<h3>My report template is not generated and generates an error<a class="headerlink" href="#my-report-template-is-not-generated-and-generates-an-error" title="Permalink to this headline">¶</a></h3>
+<p>Please triple check typos in tags as there is no fault tolerance.</p>
+</div>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-i-enrich-iocs-with-external-sources">
+<h3>Can I enrich IOCs with external sources ?<a class="headerlink" href="#can-i-enrich-iocs-with-external-sources" title="Permalink to this headline">¶</a></h3>
+<p>Some connectors were developed but they are not published yet. They might be added in future versions.
+There is a premise for MISP in app &gt; iris_engine &gt; connectors &gt; misp4iris.</p>
+</div>
+<div class="section" id="is-there-an-api-client">
+<h3>Is there an API client ?<a class="headerlink" href="#is-there-an-api-client" title="Permalink to this headline">¶</a></h3>
+<p>Not yet but it might be in the future.</p>
+</div>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-i-restrict-cases">
+<h3>Can I restrict cases ?<a class="headerlink" href="#can-i-restrict-cases" title="Permalink to this headline">¶</a></h3>
+<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases.</p>
+</div>
+<div class="section" id="can-i-expose-iris-on-the-internet">
+<h3>Can I expose IRIS on the Internet ?<a class="headerlink" href="#can-i-expose-iris-on-the-internet" title="Permalink to this headline">¶</a></h3>
+<p>NO ! Please don’t. This platform should only be accessible in a restricted environment.</p>
+</div>
+<div class="section" id="i-found-a-security-issue-can-i-have-a-bounty">
+<h3>I found a security issue, can I have a bounty ?<a class="headerlink" href="#i-found-a-security-issue-can-i-have-a-bounty" title="Permalink to this headline">¶</a></h3>
+<p>No - IRIS is free and open source so there is no bounty. Please <a class="reference external" href="mailto:contact&#37;&#52;&#48;dfir-iris&#46;org">report</a> it as soon as possible so we can fix it.</p>
+</div>
+</div>
+<div class="section" id="misc">
+<h2>MISC<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-does-iris-stands-for">
+<h3>What does IRIS stands for ?<a class="headerlink" href="#what-does-iris-stands-for" title="Permalink to this headline">¶</a></h3>
+<p>Originally Incident Response Investigation System. But it can be whatever you want really.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="roadmap.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Roadmap</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Airbus CyberSecurity<br/>
+        
+            &copy; Copyright 2021, Airbus CyberSecurity.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
