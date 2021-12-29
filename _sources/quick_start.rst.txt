@@ -45,8 +45,8 @@ Finally, you can build all.
 
 .. code:: bash
 
-   git clone https://github.com/dfir-iris/irisweb.git
-   cd irisweb
+   git clone https://github.com/dfir-iris/iris-web.git
+   cd iris-web
    # [... optionally, do some configuration as specified above ...]
    docker-compose build
    

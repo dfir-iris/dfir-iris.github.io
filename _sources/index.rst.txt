@@ -8,6 +8,7 @@ It's web application, so it can be either installed on a fixed-server, or on a l
 
 It is born following the struggle to share long and complex investigations among analysts. Most of the current similar platforms are either commercial or targeting the incident handling and triage steps, not the investigation itself. 
 
+The project is available here: https://github.com/dfir-iris/iris-web
 
 .. admonition::  I've read enough, I want to try it
   :class: note
