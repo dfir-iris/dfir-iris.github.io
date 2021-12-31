@@ -33,7 +33,7 @@ Iris is split on 5 Docker services, each with a different role.
 
 Each service can be built independently, for development for example. In this QuickStart everything will be built at once.
 
-First of all, clone the irisweb repository.
+First of all, clone the iris-web repository. Then, at the root of the project, copy the **.env.model** file into **.env**.
 
 You can skip this part if you just want to try or develop. If used in production, please configure the .env file at the root of the project:
   - Nginx: you might want to specify your own certificate as specified above
@@ -47,6 +47,7 @@ Finally, you can build all.
 
    git clone https://github.com/dfir-iris/iris-web.git
    cd iris-web
+   cp .env.model .env
    # [... optionally, do some configuration as specified above ...]
    docker-compose build
    

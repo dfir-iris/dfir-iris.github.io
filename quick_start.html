@@ -288,7 +288,7 @@ the official website of <a class="reference external" href="https://docs.docker.
 </dd>
 </dl>
 <p>Each service can be built independently, for development for example. In this QuickStart everything will be built at once.</p>
-<p>First of all, clone the irisweb repository.</p>
+<p>First of all, clone the iris-web repository. Then, at the root of the project, copy the <strong>.env.model</strong> file into <strong>.env</strong>.</p>
 <dl class="simple">
 <dt>You can skip this part if you just want to try or develop. If used in production, please configure the .env file at the root of the project:</dt><dd><ul class="simple">
 <li><p>Nginx: you might want to specify your own certificate as specified above</p></li>
@@ -300,6 +300,7 @@ the official website of <a class="reference external" href="https://docs.docker.
 <p>Finally, you can build all.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/dfir-iris/iris-web.git
 <span class="nb">cd</span> iris-web
+cp .env.model .env
 <span class="c1"># [... optionally, do some configuration as specified above ...]</span>
 docker-compose build
 </pre></div>
