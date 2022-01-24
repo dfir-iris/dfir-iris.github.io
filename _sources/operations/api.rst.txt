@@ -26,9 +26,11 @@ It can be found on the left panel, under username and My Settings.
 
 
 
-Endpoints
-#########
-A list of the endpoints accessible by the API is available `here <../_static/iris_api_reference.html>`_. 
+References
+##########
+
+- `API v1.0.0 <../_static/iris_api_reference_v1.0.0.html>`_ (applies to Iris <= v1.2.1)
+- `API v1.0.1 <../_static/iris_api_reference_v1.0.1.html>`_ (applies to Iris > v1.2.1)
 
 How to use
 ########## 

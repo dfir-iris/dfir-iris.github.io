@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Development &#8212; IRIS Documentation</title>
+    <title>Setting up an IRIS development environment &#8212; IRIS Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -34,8 +34,8 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Setting up an IRIS development environment" href="dev_env.html" />
-    <link rel="prev" title="Tutorials" href="../operations/tutorials.html" />
+    <link rel="next" title="Documentation build" href="dev_docs.html" />
+    <link rel="prev" title="Development" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -118,7 +118,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Development
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -126,9 +126,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dev_env.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Developing IRIS
     </a>
    </li>
@@ -195,7 +195,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/development/index.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/development/dev_env.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -220,6 +220,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-app">
+   Web-app
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -228,26 +241,44 @@
         
               <div>
                 
-  <div class="section" id="development">
-<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_env.html">Developing IRIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_env.html#web-app">Web-app</a></li>
+  <div class="section" id="setting-up-an-iris-development-environment">
+<h1>Setting up an IRIS development environment<a class="headerlink" href="#setting-up-an-iris-development-environment" title="Permalink to this headline">¶</a></h1>
+<p>This documentation is not a How-To develop IRIS. It only proposes a setup to easily develop and test IRIS.
+It follows an (issue)[<a class="reference external" href="https://github.com/dfir-iris/iris-web/issues/39">https://github.com/dfir-iris/iris-web/issues/39</a>] raised on the Github of the project.</p>
+<p>It recommends the use of a hybrid development environment, as most of the time only the web-app needs to be changed:</p>
+<ul class="simple">
+<li><p>Pycharm or any Python IDE for the web-app</p></li>
+<li><p>Docker for db, nginx, celery and worker. The three later are even optional if you don’t develop modules.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_docs.html">Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#pre-requisites">1. Pre-requisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#building">2. Building</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_modules.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-init-py-file">The __init__.py file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-main-class">The main class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-module-configuration">The module configuration</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="web-app">
+<h2>Web-app<a class="headerlink" href="#web-app" title="Permalink to this headline">¶</a></h2>
+<p>For the webapp configuration, a specific <cite>.ini</cite> need to be created.
+- Create <cite>config.priv.ini</cite> in source/app by copying the <cite>config.docker.ini`present in the same directory.
+- Change `PG_SERVER = db</cite> to  <cite>PG_SERVER = 127.0.0.1</cite> or whatever IP is the Postgresql/docker running with
+-
+That’s the only configuration change needed for the app to run outside docker. The <cite>docker.priv.ini</cite> is already excluded in gitignore.</p>
+<p>Then Pycharm need to be setup with a dedicated environment, by adding a new configuration:
+- Script path : <cite>source/run.py</cite>
+- Python interpreter 3.8
+- Working directory: <cite>source</cite></p>
+<p>To have pylint, right click on <cite>source</cite> in the directory tree and <cite>mark directory as</cite> &gt; <cite>sources root</cite>.
+The requirements then need to be installed. Pycharm should detect the requirements.txt and propose to install de dependencies.
+Otherwise they can be installed with the following command (issued in the virtual environment) :
+<cite>pip3 install -r sourcerequirements.txt</cite></p>
+<p>## Run
+1. Spin up the docker db <cite>docker-compose up db</cite>
+2. Run the Pycharm configuration you created
+3. The interface should be accessible on <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> (and <a class="reference external" href="https://127.0.0.1:4433">https://127.0.0.1:4433</a> if you started the nginx docker)</p>
+<p>IRIS can now be developed and debugged on the fly.</p>
+<p>## Tests in docker
+Once the code is working by running on Pycharm, we highly recommend to test it on Docker. To do so, the app docker need to be erased and rebuilt.</p>
+<ol class="arabic simple">
+<li><p><cite>docker-compose rm app</cite></p></li>
+<li><p><cite>docker-compose build app</cite></p></li>
+<li><p><cite>docker-compose up db app</cite></p></li>
+</ol>
+<p><strong>Development considerations</strong>
+If the development results in DB modification, please use Alembic and add a migration script so users don’t loose their data when they upgrade.</p>
 </div>
 </div>
 
@@ -262,19 +293,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../operations/tutorials.html" title="previous page">
+        <a class="left-prev" href="index.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Tutorials</p>
+                <p class="prevnext-title">Development</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="dev_env.html" title="next page">
+        <a class="right-next" href="dev_docs.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Setting up an IRIS development environment</p>
+                <p class="prevnext-title">Documentation build</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

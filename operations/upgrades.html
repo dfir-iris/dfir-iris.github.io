@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Development &#8212; IRIS Documentation</title>
+    <title>Upgrades &#8212; IRIS Documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -34,8 +34,8 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Setting up an IRIS development environment" href="dev_env.html" />
-    <link rel="prev" title="Tutorials" href="../operations/tutorials.html" />
+    <link rel="next" title="Modules" href="modules.html" />
+    <link rel="prev" title="API" href="api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -80,65 +80,65 @@
    Quick Start
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../operations/index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
    Operations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../operations/api.html">
+    <a class="reference internal" href="api.html">
      API
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../operations/upgrades.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Upgrades
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../operations/modules.html">
+    <a class="reference internal" href="modules.html">
      Modules
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../operations/reports.html">
+    <a class="reference internal" href="reports.html">
      Reports
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../operations/tutorials.html">
+    <a class="reference internal" href="tutorials.html">
      Tutorials
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../development/index.html">
    Development
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="dev_env.html">
+    <a class="reference internal" href="../development/dev_env.html">
      Developing IRIS
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dev_docs.html">
+    <a class="reference internal" href="../development/dev_docs.html">
      Documentation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dev_modules.html">
+    <a class="reference internal" href="../development/dev_modules.html">
      Modules
     </a>
    </li>
@@ -195,7 +195,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/development/index.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/operations/upgrades.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -220,6 +220,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backing-up-db">
+   Backing-up DB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgrading">
+   Upgrading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rolling-back">
+   Rolling back
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -228,26 +251,47 @@
         
               <div>
                 
-  <div class="section" id="development">
-<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_env.html">Developing IRIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_env.html#web-app">Web-app</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_docs.html">Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#pre-requisites">1. Pre-requisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#building">2. Building</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_modules.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-init-py-file">The __init__.py file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-main-class">The main class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#the-module-configuration">The module configuration</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="upgrades">
+<h1>Upgrades<a class="headerlink" href="#upgrades" title="Permalink to this headline">¶</a></h1>
+<p>Iris handles upgrades of the database automatically, thus no specific actions are required.</p>
+<div class="warning admonition">
+<p class="admonition-title">Caution</p>
+<p>For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.</p>
+</div>
+<div class="section" id="backing-up-db">
+<h2>Backing-up DB<a class="headerlink" href="#backing-up-db" title="Permalink to this headline">¶</a></h2>
+<p>Only if you run in production and data is critical.</p>
+<ol class="arabic simple">
+<li><p>List the current running docker containers <cite>docker container list</cite></p></li>
+<li><p>Spot the IRIS DB container name or ID, and execute the backup</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> &lt;container&gt; pg_dump -U postgres iris_db <span class="p">|</span> gzip &gt; ../iris_db_backup.gz
+</pre></div>
+</div>
+</div>
+<div class="section" id="upgrading">
+<h2>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Stop the dockers <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">stop</span></code></p></li>
+<li><p>Remove the application dockers <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">rm</span> <span class="pre">app</span> <span class="pre">worker</span></code></p></li>
+<li><p>Get the last version of Iris <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code> - or any tagged versions</p></li>
+<li><p>Build the new versions <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span> <span class="pre">app</span> <span class="pre">worker</span> <span class="pre">--no-cache</span></code></p></li>
+<li><p>Run IRIS again. The app will handle the DB migration <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="rolling-back">
+<h2>Rolling back<a class="headerlink" href="#rolling-back" title="Permalink to this headline">¶</a></h2>
+<p>In case something went wrong, you can rollback to your previous version and restore data.</p>
+<ol class="arabic simple">
+<li><p>Remove the faulty docker DB <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span> <span class="pre">db</span> <span class="pre">--volumes</span></code></p></li>
+<li><p>Checkout to the previous version working of IRIS</p></li>
+<li><p>Rebuild the images <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span> <span class="pre">--no-cache</span></code></p></li>
+<li><p>Spin up the docker DB, and ONLY this one. <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">db</span></code></p></li>
+<li><p>Get the ID or name of the docker DB <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">list</span></code></p></li>
+<li><p>Restore the DB data <code class="docutils literal notranslate"><span class="pre">zcat</span> <span class="pre">../iris_db_backup.gz</span> <span class="pre">|</span> <span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-i</span> <span class="pre">&lt;container&gt;</span> <span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">postgres</span> <span class="pre">-d</span> <span class="pre">iris_db</span></code></p></li>
+<li><p>Spin up the rest of the dockers <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code></p></li>
+<li><p>Your data should back.</p></li>
+</ol>
 </div>
 </div>
 
@@ -262,19 +306,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../operations/tutorials.html" title="previous page">
+        <a class="left-prev" href="api.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Tutorials</p>
+                <p class="prevnext-title">API</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="dev_env.html" title="next page">
+        <a class="right-next" href="modules.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Setting up an IRIS development environment</p>
+                <p class="prevnext-title">Modules</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
