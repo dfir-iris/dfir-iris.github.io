@@ -1,0 +1,1452 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dfir_iris_client.case module &#8212; IRIS Documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dfir_iris_client.customer module" href="dfir_iris_client.customer.html" />
+    <link rel="prev" title="dfir_iris_client.admin module" href="dfir_iris_client.admin.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo-3.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IRIS Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quick_start.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../operations/index.html">
+   Operations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../operations/api.html">
+     API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../operations/upgrades.html">
+     Upgrades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../operations/modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../operations/reports.html">
+     Reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../operations/tutorials.html">
+     Tutorials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../modules.html">
+   Python client
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="dfir_iris_client.html">
+     Doc v1.0.1
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="dfir_iris_client.admin.html">
+       dfir_iris_client.admin module
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       dfir_iris_client.case module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dfir_iris_client.customer.html">
+       dfir_iris_client.customer module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dfir_iris_client.global_search.html">
+       dfir_iris_client.global_search module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dfir_iris_client.session.html">
+       dfir_iris_client.session module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dfir_iris_client.users.html">
+       dfir_iris_client.users module
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="dfir_iris_client.helper.html">
+       dfir_iris_client.helper package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.analysis_status.html">
+         dfir_iris_client.helper.analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.assets_type.html">
+         dfir_iris_client.helper.assets_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.colors.html">
+         dfir_iris_client.helper.colors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.errors.html">
+         dfir_iris_client.helper.errors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.events_categories.html">
+         dfir_iris_client.helper.events_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.ioc_types.html">
+         dfir_iris_client.helper.ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.iris_object.html">
+         dfir_iris_client.helper.iris_object module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.objects_def.html">
+         dfir_iris_client.helper.objects_def module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.task_status.html">
+         dfir_iris_client.helper.task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.tlps.html">
+         dfir_iris_client.helper.tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.helper.utils.html">
+         dfir_iris_client.helper.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="dfir_iris_client.tests.html">
+       dfir_iris_client.tests package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_admin.html">
+         dfir_iris_client.tests.test_admin module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_analysis_status.html">
+         dfir_iris_client.tests.test_analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_asset_type.html">
+         dfir_iris_client.tests.test_asset_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_case.html">
+         dfir_iris_client.tests.test_case module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_customer.html">
+         dfir_iris_client.tests.test_customer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_event_categories.html">
+         dfir_iris_client.tests.test_event_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_global_search.html">
+         dfir_iris_client.tests.test_global_search module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_ioc_types.html">
+         dfir_iris_client.tests.test_ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_task_status.html">
+         dfir_iris_client.tests.test_task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.test_tlps.html">
+         dfir_iris_client.tests.test_tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dfir_iris_client.tests.tests_helper.html">
+         dfir_iris_client.tests.tests_helper module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../development/index.html">
+   Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../development/dev_env.html">
+     Developing IRIS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../development/dev_docs.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../development/dev_modules.html">
+     Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../qa.html">
+   Q&amp;A
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/python_client/v1.0.1/dfir_iris_client.case.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="module-dfir_iris_client.case">
+<span id="dfir-iris-client-case-module"></span><h1>dfir_iris_client.case module<a class="headerlink" href="#module-dfir_iris_client.case" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">dfir_iris_client.case.</span></span><span class="sig-name descname"><span class="pre">Case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfir_iris_client.case.Case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles the case methods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case._assert_cid">
+<span class="sig-name descname"><span class="pre">_assert_cid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#dfir_iris_client.case.Case._assert_cid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies that the provided cid is set. This does not verify the validity of the cid.
+If an invalid CID is set, the requests are emitted but will likely fail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>Exception is Case ID format is invalid</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>CaseID as int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_asset">
+<span class="sig-name descname"><span class="pre">add_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asset_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compromised</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_links</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an asset to the target case id.</p>
+<p>If they are strings, asset_types and analysis_status are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the asset to add</p></li>
+<li><p><strong>asset_type</strong> – Name or ID of the asset type</p></li>
+<li><p><strong>description</strong> – Description of the asset</p></li>
+<li><p><strong>domain</strong> – Domain of the asset</p></li>
+<li><p><strong>ip</strong> – IP of the asset</p></li>
+<li><p><strong>additional_info</strong> – Additional information,</p></li>
+<li><p><strong>analysis_status</strong> – Status of the analysis</p></li>
+<li><p><strong>compromised</strong> – Set to true if asset is compromised</p></li>
+<li><p><strong>tags</strong> – List of tags</p></li>
+<li><p><strong>ioc_links</strong> – List of IOC to link to this asset</p></li>
+<li><p><strong>cid</strong> – int - Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_case">
+<span class="sig-name descname"><span class="pre">add_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_customer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soc_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_customer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new case. If create_customer is set to true and the customer doesn’t exist,
+it is created. Otherwise an error is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_name</strong> – case_name</p></li>
+<li><p><strong>case_description</strong> – Description of the case</p></li>
+<li><p><strong>case_customer</strong> – Name or ID of the customer</p></li>
+<li><p><strong>soc_id</strong> – SOC Number</p></li>
+<li><p><strong>create_customer</strong> – Set to true to create the customer is doesn’t exists.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_event">
+<span class="sig-name descname"><span class="pre">add_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">title:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">date_time:</span> <span class="pre">&lt;module</span> <span class="pre">'datetime'</span> <span class="pre">from</span> <span class="pre">'/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/datetime.py'&gt;</span></em>, <em class="sig-param"><span class="pre">content:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">raw_content:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">source:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">linked_assets:</span> <span class="pre">Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">category:</span> <span class="pre">Optional[Union[int</span></em>, <em class="sig-param"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">tags:</span> <span class="pre">Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">color:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">display_in_graph:</span> <span class="pre">Optional[bool]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">display_in_summary:</span> <span class="pre">Optional[bool]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">cid:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">timezone_string:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new event to the timeline.</p>
+<p>If it is a string, category is lookup-ed up before the addition request is issued.
+it can be either a name or an ID. For performances prefer an ID as it is used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Title of the event</p></li>
+<li><p><strong>date_time</strong> – Datetime of the event, including timezone</p></li>
+<li><p><strong>content</strong> – Content of the event (displayed in timeline on GUI)</p></li>
+<li><p><strong>raw_content</strong> – Raw content of the event (displayed in detailed event on GUI)</p></li>
+<li><p><strong>source</strong> – Source of the event</p></li>
+<li><p><strong>linked_assets</strong> – List of assets to link with this event</p></li>
+<li><p><strong>category</strong> – Category of the event (MITRE <a class="reference external" href="mailto:ATT&#37;&#52;&#48;CK">ATT<span>&#64;</span>CK</a>)</p></li>
+<li><p><strong>color</strong> – Left border of the event in the timeline</p></li>
+<li><p><strong>display_in_graph</strong> – Set to true to display in graph page - Default to true</p></li>
+<li><p><strong>display_in_summary</strong> – Set to true to display in Summary - Default to false</p></li>
+<li><p><strong>tags</strong> – A list of strings to add as tags</p></li>
+<li><p><strong>timezone_string</strong> – Timezone in format +XX:XX or -XX:XX. If none, +00:00 is used</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_evidence">
+<span class="sig-name descname"><span class="pre">add_evidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_evidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new evidence to the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – name of the evidence</p></li>
+<li><p><strong>file_size</strong> – Size of the file</p></li>
+<li><p><strong>description</strong> – Description of the evidence</p></li>
+<li><p><strong>file_hash</strong> – hash of the evidence</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_global_task">
+<span class="sig-name descname"><span class="pre">add_global_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignee</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_global_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new task.</p>
+<p>If they are strings, status and assignee are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Title of the task</p></li>
+<li><p><strong>description</strong> – Description of the task</p></li>
+<li><p><strong>assignee</strong> – Assignee ID or username</p></li>
+<li><p><strong>tags</strong> – Tags of the task</p></li>
+<li><p><strong>status</strong> – String or status ID, need to be a valid status</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_ioc">
+<span class="sig-name descname"><span class="pre">add_ioc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_tlp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_ioc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an ioc to the target case id.</p>
+<p>If they are strings, ioc_tlp and ioc_type are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Value of the IOC</p></li>
+<li><p><strong>ioc_type</strong> – Type of IOC, either name or type ID</p></li>
+<li><p><strong>description</strong> – Optional - Description of the IOC</p></li>
+<li><p><strong>ioc_tlp</strong> – TLP name or tlp ID. Default is orange</p></li>
+<li><p><strong>ioc_tags</strong> – List of tags to add</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note_title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_note" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Creates a new note. Case ID and group note ID need to match the case in which the note is stored.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>note_title</strong> – Title of the note</p></li>
+<li><p><strong>note_content</strong> – Content of the note</p></li>
+<li><p><strong>group_id</strong> – Target group to attach the note to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_notes_group">
+<span class="sig-name descname"><span class="pre">add_notes_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_notes_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new notes group in the target cid case.
+Group_title can be an existing group, there is no uniqueness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>group_title</strong> – Name of the group to add</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_task">
+<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignee</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new task to the target case.</p>
+<p>If they are strings, status and assignee are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – Title of the task</p></li>
+<li><p><strong>description</strong> – Description of the task</p></li>
+<li><p><strong>assignee</strong> – Assignee ID or username</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>tags</strong> – Tags of the task</p></li>
+<li><p><strong>status</strong> – String or status ID, need to be a valid status</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.add_task_log">
+<span class="sig-name descname"><span class="pre">add_task_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.add_task_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new task log that will appear under activities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – Message to log</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.asset_exists">
+<span class="sig-name descname"><span class="pre">asset_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.asset_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if asset_id exists in the context of the current case or cid.
+This method is an overlay of get_asset and thus not performant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>asset_id</strong> – Asset to lookup</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if exists else false</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.case_id_exists">
+<span class="sig-name descname"><span class="pre">case_id_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.case_id_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a case id is valid by probing the summary endpoint.
+This method returns true if the probe was successful. If False is returned
+it might not indicate the case doesn’t exist but might be the result of a request malfunction
+(server down, invalid API token, etc).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – int - Case ID to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if case ID exists otherwise false</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_asset">
+<span class="sig-name descname"><span class="pre">delete_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an asset identified by asset_id. CID must match the case in which the asset is stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>asset_id: ID of the asset to remove</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>cid: Case ID</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_case">
+<span class="sig-name descname"><span class="pre">delete_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_case" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Deletes a case based on its ID. All objects associated to the case are deleted. This includes :</dt><dd><ul class="simple">
+<li><p>assets,</p></li>
+<li><p>iocs that are only referenced in this case</p></li>
+<li><p>notes</p></li>
+<li><p>summary</p></li>
+<li><p>events</p></li>
+<li><p>evidences</p></li>
+<li><p>tasklogs</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – int - Case to delete</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_event">
+<span class="sig-name descname"><span class="pre">delete_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an event from its ID. CID must match the case in which the event is stored</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_id</strong> – Event to delete</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_evidence">
+<span class="sig-name descname"><span class="pre">delete_evidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evidence_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_evidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an evidence from its ID. evidence_id needs to be an existing evidence in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evidence_id</strong> – int - Evidence to delete</p></li>
+<li><p><strong>cid</strong> – int - Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_global_task">
+<span class="sig-name descname"><span class="pre">delete_global_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_global_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a global task from its ID. task_id needs to be an existing task in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>task_id</strong> – int - Task to delete</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_ioc">
+<span class="sig-name descname"><span class="pre">delete_ioc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ioc_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_ioc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an IOC from its ID. CID must match the case in which the ioc is stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ioc_id</strong> – ID of the ioc</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_note">
+<span class="sig-name descname"><span class="pre">delete_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a note. note_id needs to be a valid existing note in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>note_id</strong> – Name of the note to delete</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_notes_group">
+<span class="sig-name descname"><span class="pre">delete_notes_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_notes_group" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Deletes a notes group. All notes in the target groups are deleted ! There is not way to get the notes back.
+Case ID needs to match the case where the group is stored.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>group_id</strong> – ID of the group</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.delete_task">
+<span class="sig-name descname"><span class="pre">delete_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.delete_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a task from its ID. CID must match the case in which the task is stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_id</strong> – Task to delete</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_asset">
+<span class="sig-name descname"><span class="pre">get_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an asset information from its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>asset_id</strong> – ID of the asset to fetch</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_case">
+<span class="sig-name descname"><span class="pre">get_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets an existing case from its ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – CaseID to fetch</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_event">
+<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an event from the timeline</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_id</strong> – ID of the event to fetch</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_evidence">
+<span class="sig-name descname"><span class="pre">get_evidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evidence_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_evidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an evidence from its ID. evidence_id needs to be an existing evidence in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evidence_id</strong> – Evidence ID to lookup</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_global_task">
+<span class="sig-name descname"><span class="pre">get_global_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_global_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a global task from its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>task_id</strong> – Task ID to lookup</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_ioc">
+<span class="sig-name descname"><span class="pre">get_ioc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ioc_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_ioc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an IOC.  ioc_id needs to be an existing ioc in the provided case ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ioc_id</strong> – IOC ID</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_note">
+<span class="sig-name descname"><span class="pre">get_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a note. note_id needs to be a valid existing note in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>note_id</strong> – ID of the note to fetch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_notes_group">
+<span class="sig-name descname"><span class="pre">get_notes_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_notes_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a notes group based on its ID. The group ID needs to match the CID where it is stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>group_id</strong> – Group ID to fetch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_summary">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the summary of the specified case id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.get_task">
+<span class="sig-name descname"><span class="pre">get_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.get_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a task from its ID. task_id needs to be a valid task in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_id</strong> – Task ID to lookup</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_assets">
+<span class="sig-name descname"><span class="pre">list_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_assets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all assets of the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – int - Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_cases">
+<span class="sig-name descname"><span class="pre">list_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all the cases</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ApiResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_events">
+<span class="sig-name descname"><span class="pre">list_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_by_asset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of events from the timeline. filter_by_asset can be used to return only the events
+linked to a specific asset. In case the asset doesn’t exist, an empty timeline is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filter_by_asset</strong> – Select the timeline of a specific asset by setting an existing asset ID</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_evidences">
+<span class="sig-name descname"><span class="pre">list_evidences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_evidences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of evidences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_global_tasks">
+<span class="sig-name descname"><span class="pre">list_global_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_global_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of global tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ApiResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_iocs">
+<span class="sig-name descname"><span class="pre">list_iocs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_iocs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all iocs of the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>cid: Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_notes_groups">
+<span class="sig-name descname"><span class="pre">list_notes_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_notes_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of notes groups of the target cid case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.list_tasks">
+<span class="sig-name descname"><span class="pre">list_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.list_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of tasks linked to the provided case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.search_notes">
+<span class="sig-name descname"><span class="pre">search_notes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_term</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.search_notes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Searches in notes. Case ID and group note ID need to match the case in which the notes are stored.
+Only the titles and notes ID of the matching notes are return, not the actual content.
+Use % for wildcard.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – int - Case ID</p></li>
+<li><p><strong>search_term</strong> – str - Term to search in notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.set_cid">
+<span class="sig-name descname"><span class="pre">set_cid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.set_cid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current cid for the Case instance.
+It can be override be setting the cid of each method though not recommended to keep consistency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cid</strong> – Case ID</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Always true</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.set_summary">
+<span class="sig-name descname"><span class="pre">set_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary_content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.set_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the summary of the specified case id.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This completely replace the current content of the summary. Any co-worker working on the summary
+will receive an overwrite order from the server. The order is immediately received by web socket. This method
+should probably be only used when setting a new case.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>summary_content</strong> – Content of the summary to push. This will completely replace the current content</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_asset">
+<span class="sig-name descname"><span class="pre">update_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asset_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_links</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compromised</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_sync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an asset. asset_id needs to be an existing asset in the target case cid.</p>
+<p>If they are strings, asset_types and analysis_status are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>asset_id</strong> – ID of the asset to update</p></li>
+<li><p><strong>name</strong> – Name of the asset</p></li>
+<li><p><strong>asset_type</strong> – Name or ID of the asset type</p></li>
+<li><p><strong>tags</strong> – List of tags</p></li>
+<li><p><strong>description</strong> – Description of the asset</p></li>
+<li><p><strong>domain</strong> – Domain of the asset</p></li>
+<li><p><strong>ip</strong> – IP of the asset</p></li>
+<li><p><strong>additional_info</strong> – Additional information,</p></li>
+<li><p><strong>analysis_status</strong> – Status of the analysis</p></li>
+<li><p><strong>ioc_links</strong> – List of IOC to link to this asset</p></li>
+<li><p><strong>compromised</strong> – True is asset is compromised</p></li>
+<li><p><strong>cid</strong> – int - Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_event">
+<span class="sig-name descname"><span class="pre">update_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event_id:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">title:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">date_time:</span> <span class="pre">&lt;module</span> <span class="pre">'datetime'</span> <span class="pre">from</span> <span class="pre">'/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/datetime.py'&gt;</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">content:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">raw_content:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">source:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">linked_assets:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">category:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">tags:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">color:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">display_in_graph:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">display_in_summary:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">cid:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">timezone_string:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an event of the timeline. event_id needs to be an existing event in the target case.</p>
+<p>If it is a string, category is lookup-ed up before the addition request is issued.
+it can be either a name or an ID. For performances prefer an ID as it is used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_id</strong> – Event ID to update</p></li>
+<li><p><strong>title</strong> – Title of the event</p></li>
+<li><p><strong>date_time</strong> – Datetime of the event, including timezone</p></li>
+<li><p><strong>content</strong> – Content of the event (displayed in timeline on GUI)</p></li>
+<li><p><strong>raw_content</strong> – Raw content of the event (displayed in detailed event on GUI)</p></li>
+<li><p><strong>source</strong> – Source of the event</p></li>
+<li><p><strong>linked_assets</strong> – List of assets to link with this event</p></li>
+<li><p><strong>category</strong> – Category of the event (MITRE <a class="reference external" href="mailto:ATT&#37;&#52;&#48;CK">ATT<span>&#64;</span>CK</a>)</p></li>
+<li><p><strong>color</strong> – Left border of the event in the timeline</p></li>
+<li><p><strong>display_in_graph</strong> – Set to true to display in graph page - Default to true</p></li>
+<li><p><strong>display_in_summary</strong> – Set to true to display in Summary - Default to false</p></li>
+<li><p><strong>tags</strong> – A list of strings to add as tags</p></li>
+<li><p><strong>timezone_string</strong> – Timezone in format +XX:XX or -XX:XX. If none, +00:00 is used</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_evidence">
+<span class="sig-name descname"><span class="pre">update_evidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evidence_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_evidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an evidence of the matching case. evidence_id needs to be an existing evidence in the target case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evidence_id</strong> – ID of the evidence</p></li>
+<li><p><strong>filename</strong> – name of the evidence</p></li>
+<li><p><strong>file_size</strong> – Size of the file</p></li>
+<li><p><strong>description</strong> – Description of the evidence</p></li>
+<li><p><strong>file_hash</strong> – hash of the evidence</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_global_task">
+<span class="sig-name descname"><span class="pre">update_global_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignee</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_global_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a task. task_id needs to be an existing task in the database.</p>
+<p>If they are strings, status and assignee are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_id</strong> – ID of the task to update</p></li>
+<li><p><strong>title</strong> – Title of the task</p></li>
+<li><p><strong>description</strong> – Description of the task</p></li>
+<li><p><strong>assignee</strong> – Assignee ID or assignee username</p></li>
+<li><p><strong>tags</strong> – Tags of the task</p></li>
+<li><p><strong>status</strong> – String status, need to be a valid status</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_ioc">
+<span class="sig-name descname"><span class="pre">update_ioc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ioc_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_tlp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioc_tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_ioc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an existing IOC. ioc_id needs to be an existing ioc in the provided case ID.</p>
+<p>If they are strings, ioc_tlp and ioc_type are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ioc_id</strong> – IOC ID to update</p></li>
+<li><p><strong>value</strong> – Value of the IOC</p></li>
+<li><p><strong>ioc_type</strong> – Type of IOC, either name or type ID</p></li>
+<li><p><strong>description</strong> – Description of the IOC</p></li>
+<li><p><strong>ioc_tlp</strong> – TLP name or tlp ID. Default is orange</p></li>
+<li><p><strong>ioc_tags</strong> – List of tags to add</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_note">
+<span class="sig-name descname"><span class="pre">update_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a note. note_id needs to be a valid existing note in the target case.
+Only the content of the set fields is replaced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>note_id</strong> – Name of the note to update</p></li>
+<li><p><strong>note_content</strong> – Content of the note</p></li>
+<li><p><strong>note_title</strong> – Title of the note</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_notes_group">
+<span class="sig-name descname"><span class="pre">update_notes_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_notes_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a notes group in the target cid case.
+<cite>group_id</cite> need to be an existing group in the target case.
+<cite>group_title</cite> can be an existing group, there is no uniqueness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>group_id</strong> – Group ID to update</p></li>
+<li><p><strong>group_title</strong> – Name of the group</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dfir_iris_client.case.Case.update_task">
+<span class="sig-name descname"><span class="pre">update_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignee</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="dfir_iris_client.helper.utils.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">dfir_iris_client.helper.utils.ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.case.Case.update_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a task. task_id needs to be a valid task in the target case.</p>
+<p>If they are strings, status and assignee are lookup-ed up before the addition request is issued.
+Both can be either a name or an ID. For performances prefer an ID as they’re used directly in the request
+without prior lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_id</strong> – ID of the task to update</p></li>
+<li><p><strong>title</strong> – Title of the task</p></li>
+<li><p><strong>description</strong> – Description of the task</p></li>
+<li><p><strong>assignee</strong> – Assignee ID or assignee username</p></li>
+<li><p><strong>cid</strong> – Case ID</p></li>
+<li><p><strong>tags</strong> – Tags of the task</p></li>
+<li><p><strong>status</strong> – String status, need to be a valid status</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>APIResponse object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="dfir_iris_client.admin.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">dfir_iris_client.admin module</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="dfir_iris_client.customer.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">dfir_iris_client.customer module</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By DFIR-IRIS Team<br/>
+        
+            &copy; Copyright 2021, Airbus CyberSecurity.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
