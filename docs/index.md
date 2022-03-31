@@ -12,10 +12,13 @@ The project is available at [https://github.com/dfir-iris/iris-web](https://gith
     Iris comes in dockers - you only need Docker Compose and you'll be set in a few minutes. 
     Follow [the guide](getting_started/). 
 
+
 !!! danger "Disclaimer"
 
     Iris is in its early stage. It can already be used in production, but please set backups of the database and DO NOT expose the interface on the Internet.
     We highly recommended the use of a private dedicated and secured network. 
+
+!!! warning "Upgrading to v1.4.0 ? Please please read the [upgrade documentation](operations/upgrades/#v140)"
 
 ![Timeline Example](_static/timeline_speed.gif){ align=center }
 

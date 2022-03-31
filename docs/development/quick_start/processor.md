@@ -6,7 +6,7 @@ We'll call it ``IrisDummyModule``.
 
 
 ## Project structure overview 
-As described in the [development module main page](development/modules/), the module should have the following structure.  
+As described in the [development module main page](/development/modules/), the module should have the following structure.  
 
 ```python
 setup.py                # Setup configuration to build the module 
