@@ -10,7 +10,7 @@ The project is available at [https://github.com/dfir-iris/iris-web](https://gith
 !!! hint "I've read enough, I want to try it"
 
     Iris comes in dockers - you only need Docker Compose and you'll be set in a few minutes. 
-    Follow [the guide](getting_started/). 
+    Follow [the guide](/getting_started/). 
 
 
 !!! danger "Disclaimer"
