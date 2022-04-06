@@ -29,6 +29,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra:
   social:
@@ -60,6 +62,5 @@ plugins:
             show_source: false
             docstring_style: google
       watch: [../dfir-iris-client]
-
 
 dev_addr: '127.0.0.1:8080'

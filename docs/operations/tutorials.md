@@ -1,7 +1,7 @@
 # Tutorials
 
 !!! tip "Good to know"
-        These tutorials are based on IRIS v1.2.1 and offers only a basic overview of IRIS. New versions offer more features, not showcased on this page. 
+        These tutorials are based on IRIS v1.2.1 and offers only a basic overview of IRIS. New versions offer more features, not showcased on this page. It will be updated at some point in the future.  
 
 ## Cases
 ### Create a new case

@@ -1,4 +1,4 @@
-# Python client
+# Introduction
 
 `dfir_iris_client` offers a Python interface to communicate with IRIS.  
 

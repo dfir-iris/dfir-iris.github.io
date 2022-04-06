@@ -58,7 +58,6 @@ In case something went wrong, you can rollback to your previous version and rest
 ## Version specific upgrades
 
 ### v1.4.0
-
 This version brings breaking changes in the DB docker by adding a named volume instead of the default one.
 This implies that previous existing database is ignored as the new docker won't know which volume was previously used.   
 To prevent this, please **strictly follow the guide below**. This will copy the data of the existing volume, to the new named one. 
@@ -96,3 +95,4 @@ docker-compose up
 ```
 7. The data should be successfully transferred.
 
+**Do not forget to clear out your browser cache, many JS files were changed.**

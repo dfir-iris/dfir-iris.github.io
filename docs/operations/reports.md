@@ -34,19 +34,22 @@ The following tags are available. None are mandatory. If a tag is mistyped, the 
     - ``evidence.filename``: File name of the evidence 
     - ``evidence.date_added``: Date of registration 
     - ``evidence.file_hash``: Hash of the evidence 
-    - ``evidence.added_by``: User who added the evidence  
+    - ``evidence.added_by``: User who added the evidence
+    - ``evidence.custom_attributes``: Custom attributes of the evidence
 
 - ``iocs``: List of IOCs objects (see below - given ``ioc`` as loop variable)
     - ``ioc.ioc_value``: Value of the IOC 
     - ``ioc.ioc_description``: Description of the IOC
     - ``ioc.ioc_type``: Type of IOC 
     - ``ioc.ioc_tags``: Tags linked to the IOC 
+    - ``ioc.custom_attributes``: Custom attributes of the IOC
 
 - ``notes``: List of notes objects (see below - given ``note`` as loop variable)
     - ``note.note_title``: Title of the note 
     - ``note.note_content``: Content of the note 
     - ``note.note_creationdate``: Creation date of the note 
     - ``note.note_lastupdate``: Date of last update 
+    - ``note.custom_attributes``: Custom attributes of the note
 
 - ``tasks``: List of tasks objects (see below - given ``task`` as loop variable)
 
@@ -57,7 +60,8 @@ The following tags are available. None are mandatory. If a tag is mistyped, the 
     - ``task.task_close_date``: Date of closure 
     - ``task.task_status``: Status of the task 
     - ``task.task_tags``: Task for the tags 
-  
+    - ``task.custom_attributes``: Custom attributes of the task
+
 - `timeline`: List of events objects (see below - given ``event`` as loop variable)
 
     - ``event.event_title``: Title of the event 
@@ -69,3 +73,4 @@ The following tags are available. None are mandatory. If a tag is mistyped, the 
     - ``event.event_tags``: Tags of the events 
     - ``event.last_edited_by``: User who last edited the event 
     - ``event.assets``: List of assets names linked to the event
+    - ``event.custom_attributes``: Custom attributes of the event

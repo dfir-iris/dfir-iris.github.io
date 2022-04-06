@@ -18,7 +18,7 @@ The project is available at [https://github.com/dfir-iris/iris-web](https://gith
     Iris is in its early stage. It can already be used in production, but please set backups of the database and DO NOT expose the interface on the Internet.
     We highly recommended the use of a private dedicated and secured network. 
 
-!!! warning "Upgrading to v1.4.0 ? Please read the [upgrade documentation](/operations/upgrades/#v140)"
+<!-- !!! warning "Upgrading to v1.4.0 ? Please read the [upgrade documentation](/operations/upgrades/#v140)" -->
 
 ![Timeline Example](_static/timeline_speed.gif){ align=center }
 
