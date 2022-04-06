@@ -1053,9 +1053,6 @@
 </ol>
 <h2 id="version-specific-upgrades">Version specific upgrades</h2>
 <h3 id="v140">v1.4.0</h3>
-<div class="admonition warning">
-<p class="admonition-title">This version is not officially released yet. ETA April 6th, 2022</p>
-</div>
 <p>This version brings breaking changes in the DB docker by adding a named volume instead of the default one.
 This implies that previous existing database is ignored as the new docker won't know which volume was previously used. <br />
 To prevent this, please <strong>strictly follow the guide below</strong>. This will copy the data of the existing volume, to the new named one. </p>
