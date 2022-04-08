@@ -3,12 +3,13 @@
 Most of the time, Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required.  
 **However**, some breaking changes might need manual intervention.  Please use the table below to assess if a manual action is required. 
 
-| From / To|	v1.2.1|	v1.3.0|	v1.3.1|	v1.4.0|
-|-----|----|----|----|-----|
-v1.2.1|	X|	Auto|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v1.4.0)|
-v1.3.0|	X|	X|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v1.4.0)|
-v1.3.1|	X|	X|	X|	:octicons-alert-16: `Action required` - See [v1.4.0](#v1.4.0)|
-v1.4.0|	X|	X|	X|	X|
+| From / To|	v1.2.1|	v1.3.0|	v1.3.1|	v1.4.0| v1.4.1 |
+|-----|----|----|----|-----|-----|
+v1.2.1|	X|	Auto|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
+v1.3.0|	X|	X|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
+v1.3.1|	X|	X|	X|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
+v1.4.0|	X|	X|	X|	X|Auto|
+v1.4.1 | X| X| X| X | X | 
 
 !!! caution
     For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.  
@@ -58,6 +59,11 @@ In case something went wrong, you can rollback to your previous version and rest
 ## Version specific upgrades
 
 ### v1.4.0
+**This version already has a patch. Please directly upgrade to v1.4.1**
+
+### v1.4.1
+**This only applies if you are coming from IRIS <= v1.3.1.**
+
 This version brings breaking changes in the DB docker by adding a named volume instead of the default one.
 This implies that previous existing database is ignored as the new docker won't know which volume was previously used.   
 To prevent this, please **strictly follow the guide below**. This will copy the data of the existing volume, to the new named one. 
@@ -85,11 +91,11 @@ docker run --rm -it -v <previous_db_volume_id>:/from:ro -v iris-web_db_data:/to 
 # With the example of 2., this gives 
 docker run --rm -it -v a90b9998a3233a68438c8e099bd0ba98d9f62c9734e40297b8067f9fdb921eb9:/from:ro -v iris-web_db_data:/to alpine ash -c "cd /from ; cp -av . /to"
 ```
-6. Pull the last changes from the repository, checkout to `v1.4.0`, build and run. 
+6. Pull the last changes from the repository, checkout to `v1.4.1`, build and run. 
   
 ```bash
 git pull origin 
-git checkout v1.4.0
+git checkout v1.4.1
 docker-compose build 
 docker-compose up 
 ```
