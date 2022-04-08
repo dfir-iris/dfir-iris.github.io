@@ -36,7 +36,7 @@ The behavior of the module can be configured as needed. Head to the `Advanced` >
 
 - **MISP configuration** : A JSON describing the MISP access. See below for the structure.  
 - **Add MISP report as new IOC attribute** : If set to true, the module adds a new attribute with the MISP insight. 
-- **Domain report template** : Provides a right-click menu option on IOCs to trigger the VT module on selected elements. 
+- **Domain report template** : Provides a right-click menu option on IOCs to trigger the MISP module on selected elements. 
 - **Triggers automatically on IOC create**: If set to true, the module runs each time an IOC is created. Disabled by default. 
 - **Triggers automatically on IOC update**: If set to true, the module runs each time an IOC is updated. Disabled by default. 
 - **Domain report template**: Jinja2 report template for domain IOCs. Refers to the raw report to assess which fields are available. 
