@@ -40,6 +40,8 @@ extra:
       link: https://github.com/dfir-iris
     - icon: fontawesome/solid/paper-plane
       link: mailto:<contact@dfir-iris.org>
+    - icon: material/discord
+      link: https://discord.gg/76tM6QUJza
 
 repo_url: https://github.com/dfir-iris/iris-web
 site_url: https://dfir-iris.github.io

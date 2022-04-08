@@ -10,7 +10,7 @@ IRIS can be extended with modules. They can be split in two types:
 Modules (or DIM - DFIR-IRIS Modules) are actually Python packages which must be installed in the Python environment of iris-webapp and the worker (see Quick Start).
 Once installed in the Python environment, modules can be managed in ``Advanced`` > ``Modules``.
 
-![Manage modules](../_static/Manage_module.png)
+![Manage modules](../../_static/Manage_module.png)
 
 !!! info
     This section is only available for users with the Admin role.
