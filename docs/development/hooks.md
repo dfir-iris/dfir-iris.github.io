@@ -85,6 +85,7 @@ Hook name| Description|
 |on_postload_ioc_delete|Triggered on ioc deletion, after commit in DB|
 |on_manual_trigger_ioc|Triggered upon user action|
 |on_preload_event_create|Triggered on event creation, before commit in DB|
+|on_preload_event_duplicate|Triggered on event duplication, before commit in DB. This event only received the event ID which will be duplicated|
 |on_postload_event_create|Triggered on event creation, after commit in DB|
 |on_preload_event_update|Triggered on event update, before commit in DB|
 |on_postload_event_update|Triggered on event update, after commit in DB|
@@ -115,6 +116,4 @@ Hook name| Description|
 |on_preload_report_create|Triggered on report creation, before generation in DB|
 |on_postload_report_create|Triggered on report creation, before download of the document|
 |on_preload_activities_report_create|Triggered on activities report creation, before generation in DB|
-|on_postload_activities_report_create|Triggered on activities report creation, before download of the document
-
-
+|on_postload_activities_report_create|Triggered on activities report creation, before download of the document|
