@@ -6,4 +6,5 @@ nav:
   - Python client: python_client
   - Development: development
   - Q&A: zqa.md
+  - Roadmap : roadmap.md
   - Changelog: changelog.md 
