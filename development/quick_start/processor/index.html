@@ -1024,15 +1024,15 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">iris_dummy_module</span>       <span class="c1"># Name of the package </span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># Declaration of the package and main class</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">IrisDummyConfig</span><span class="o">.</span><span class="n">py</span>       <span class="c1"># Configuration of the module to help keep the main file clean </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">IrisDummyInterface</span><span class="o">.</span><span class="n">py</span>    <span class="c1"># Main class of the module </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">IrisDummyModule</span><span class="o">.</span><span class="n">py</span>    <span class="c1"># Main class of the module </span>
 </code></pre></div>
-<p>While the module could have only one main file <code>IrisDummyInterface.py</code>, we recommend splitting its configuration into a new configuration file (here <code>IrisDummyConfig.py</code>) to keep the code clear.   </p>
+<p>While the module could have only one main file <code>IrisDummyModule.py</code>, we recommend splitting its configuration into a new configuration file (here <code>IrisDummyConfig.py</code>) to keep the code clear.   </p>
 <p>There is no mandatory naming convention for the files or the class or the methods. We chose this one to keep things clear, and we recommend following the same. But it's up to you really. </p>
 <p>We will walk over these files one by one during this tutorial.  </p>
 <h2 id="creating-the-interface">Creating the interface</h2>
 <p>The interface is the code that talks with IRIS. It implements methods that call and are called by the server. It needs to inherit <a href="https://github.com/dfir-iris/iris-module-interface/blob/master/iris_interface/IrisModuleInterface.py">IrisModuleInterface class</a> from the <a href="https://github.com/dfir-iris/iris-module-interface">IrisModuleInterface package</a>.  This module handles most of the methods needed by IRIS to recognize, set up and call the module.  By inheriting this class in our interface, we avoid writing that part ourselves.  </p>
 <p>Let's write our basic interface class.  The name of the file has to be the name of the main class, that's the only constraint. We'll see later on why.  </p>
-<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyInterface.py</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyModule.py</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Import the IrisInterface class</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
@@ -1114,7 +1114,7 @@ This is done by overwriting predefined variables of the <code>IrisModuleInterfac
 </ul>
 <p>A module can have as many parameters as it needs.  </p>
 <p>We now need to update our main class to set this configuration.  </p>
-<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyInterface.py</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyModule.py</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Import the IrisInterface class</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
@@ -1150,7 +1150,7 @@ This is done by overwriting predefined variables of the <code>IrisModuleInterfac
 <li>Within this method, we call <code>register_to_hook</code> for each hook we want to subscribe</li>
 </ol>
 <p>Let's add this to our main class and register to the <code>on_postload_ioc_create</code>. This will notify use each time a new IOC is created and committed to the database. </p>
-<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyInterface.py</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyModule.py</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Import the IrisInterface class</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
@@ -1197,7 +1197,7 @@ This is done by overwriting predefined variables of the <code>IrisModuleInterfac
 <p class="admonition-title">Hint<p>The current configuration of the module can be accessed with the attribute <code>self._dict_conf</code>.  </p>
 </p>
 </div>
-<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyInterface.py</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><span class="filename">iris_dummy_module/IrisDummyModule.py</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Import the IrisInterface class</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
@@ -1253,7 +1253,8 @@ This is done by overwriting predefined variables of the <code>IrisModuleInterfac
 <a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>    <span class="c1"># our module generated during its execution.  </span>
 <a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>    <span class="k">return</span> <span class="n">InterfaceStatus</span><span class="o">.</span><span class="n">I2Success</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message_queue</span><span class="p">))</span>
 </code></pre></div>
-<p><strong>We are done !</strong> Our module is now fully ready to register, subscribe to a hook and act when notified.  </p>
+<p><strong>We are done !</strong><br />
+Our module is now fully ready to register, subscribe to a hook and act when notified.  </p>
 
   <hr>
 <div class="md-source-file">
