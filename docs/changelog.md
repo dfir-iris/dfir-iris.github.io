@@ -2,6 +2,23 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v1.4.2](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.2) <small>_ April 22, 2022 _</small> 
+!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v142) if you are upgrading from v1.3.1 or lower." 
+
+**Improvements** :   
+
+* Possibility to duplicates events in timeline - [#91](https://github.com/dfir-iris/iris-web/pull/91)  
+* Possibility to filter timeline with basic query - [#94](https://github.com/dfir-iris/iris-web/issues/94)   
+
+**Fixes** :   
+
+* Integer limit on file size in evidences - [#89](https://github.com/dfir-iris/iris-web/issues/89)  
+* Gradient in closed cases   
+* on-preload hooks list handling - [#92](https://github.com/dfir-iris/iris-web/issues/92)   
+* tags issue - [#88](https://github.com/dfir-iris/iris-web/pull/88)   
+* Case info modal from case - [#93](https://github.com/dfir-iris/iris-web/issues/93)   
+* Multiple UI issues   
+
 ## [v1.4.1](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.1) <small>_ April 8, 2022 _</small> 
  
 !!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
