@@ -14,10 +14,10 @@ README.md               # README
 iris_dummy_module       # Name of the package 
     __init__.py              # Declaration of the package and main class
     IrisDummyConfig.py       # Configuration of the module to help keep the main file clean 
-    IrisDummyInterface.py    # Main class of the module 
+    IrisDummyModule.py    # Main class of the module 
 ```
 
-While the module could have only one main file ``IrisDummyInterface.py``, we recommend splitting its configuration into a new configuration file (here ``IrisDummyConfig.py``) to keep the code clear.   
+While the module could have only one main file ``IrisDummyModule.py``, we recommend splitting its configuration into a new configuration file (here ``IrisDummyConfig.py``) to keep the code clear.   
 
 There is no mandatory naming convention for the files or the class or the methods. We chose this one to keep things clear, and we recommend following the same. But it's up to you really. 
 
@@ -30,7 +30,7 @@ The interface is the code that talks with IRIS. It implements methods that call 
 
 Let's write our basic interface class.  The name of the file has to be the name of the main class, that's the only constraint. We'll see later on why.  
 
-```python title="iris_dummy_module/IrisDummyInterface.py"
+```python title="iris_dummy_module/IrisDummyModule.py"
 #!/usr/bin/env python3
 
 # Import the IrisInterface class
@@ -131,7 +131,7 @@ A module can have as many parameters as it needs.
 We now need to update our main class to set this configuration.  
 
 
-```python title="iris_dummy_module/IrisDummyInterface.py"
+```python title="iris_dummy_module/IrisDummyModule.py"
 
 #!/usr/bin/env python3
 
@@ -182,7 +182,7 @@ Here is a summary of the events:
 Let's add this to our main class and register to the `on_postload_ioc_create`. This will notify use each time a new IOC is created and committed to the database. 
 
 
-```python title="iris_dummy_module/IrisDummyInterface.py"
+```python title="iris_dummy_module/IrisDummyModule.py"
 #!/usr/bin/env python3
 
 # Import the IrisInterface class
@@ -236,7 +236,7 @@ We will add a condition in this method, that is if the administrator sets the mo
         The current configuration of the module can be accessed with the attribute ``self._dict_conf``.  
 
 
-``` python title="iris_dummy_module/IrisDummyInterface.py"
+``` python title="iris_dummy_module/IrisDummyModule.py"
 
 #!/usr/bin/env python3
 
@@ -295,4 +295,5 @@ def hooks_handler(self, hook_name: str, data):
     return InterfaceStatus.I2Success(data=data, logs=list(self.message_queue))
 ```
 
-**We are done !** Our module is now fully ready to register, subscribe to a hook and act when notified.  
+**We are done !**  
+Our module is now fully ready to register, subscribe to a hook and act when notified.  

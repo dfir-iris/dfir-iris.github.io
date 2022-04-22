@@ -1,19 +1,38 @@
 # Upgrades
 
 Most of the time, Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required.  
-**However**, some breaking changes might need manual intervention.  Please use the table below to assess if a manual action is required. 
+**However**, some breaking changes might need manual intervention.  Please use the selectors below to assess if a manual action is required. 
 
-| From / To|	v1.2.1|	v1.3.0|	v1.3.1|	v1.4.0| v1.4.1 |
-|-----|----|----|----|-----|-----|
-v1.2.1|	X|	Auto|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
-v1.3.0|	X|	X|	Auto|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
-v1.3.1|	X|	X|	X|	:octicons-alert-16: `Action required` - See [v1.4.0](#v140)|:octicons-alert-16: `Action required` - See [v1.4.1](#v141)|
-v1.4.0|	X|	X|	X|	X|Auto|
-v1.4.1 | X| X| X| X | X | 
+!!! cite ""
+    <label for="cversion-select">Your current version:</label>
+    <select name="current_version" class="md-select" id="cversion-select">
+        <option value="">--Please choose current version--</option>
+        <option value="v1.2.1">v1.2.1</option>
+        <option value="v1.3.0">v1.3.0</option>
+        <option value="v1.3.1">v1.3.1</option>
+        <option value="v1.4.0">v1.4.0</option>
+        <option value="v1.4.1">v1.4.1</option>
+    </select>
 
-!!! caution
-    For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.  
+    <label for="tversion-select">Upgrading to:</label>
+    <select name="target_version" class="md-select" id="tversion-select">
+        <option value="">--Please choose target version--</option>
+        <option value="v1.2.1">v1.2.1</option>
+        <option value="v1.3.0">v1.3.0</option>
+        <option value="v1.3.1">v1.3.1</option>
+        <option value="v1.4.0">v1.4.0</option>
+        <option value="v1.4.1">v1.4.1</option>
+    </select>
 
+    <button class="md-button ml-mr-auto" onclick='check_versions();'>
+      <span class="">Check upgrades conditions</span>
+    </button>
+
+<div id="migration-info"></div>
+
+**For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.**  
+
+-------------
 ## Backing-up DB
 Only if you run in production and/or data is critical. 
 
@@ -58,9 +77,6 @@ In case something went wrong, you can rollback to your previous version and rest
 
 ## Version specific upgrades
 
-### v1.4.0
-**This version already has a patch. Please directly upgrade to v1.4.1**
-
 ### v1.4.1
 **This only applies if you are coming from IRIS <= v1.3.1.**
 
@@ -102,3 +118,69 @@ docker-compose up
 7. The data should be successfully transferred.
 
 **Do not forget to clear out your browser cache, many JS files were changed.**
+
+### v1.4.0
+**This version already has a patch. Please directly upgrade to [v1.4.1](#v141)**
+
+<script>
+  function check_versions() {
+    var cversion = document.getElementById("cversion-select").value;
+    var tversion = document.getElementById("tversion-select").value;
+
+    if (!cversion || !tversion) { return ;}
+
+    var map = {
+      "v1.2.1": {
+        "v1.3.0": "Auto",
+        "v1.3.1": "Auto",
+        "v1.4.0": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v140">v1.4.0</a></p>`,
+        "v1.4.1": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v141">v1.4.1</a></p>`,
+      }, 
+      "v1.3.0": {
+        "v1.3.1": "Auto",
+        "v1.4.0": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v140">v1.4.0</a></p>`,
+        "v1.4.1": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v141">v1.4.1</a></p>`,
+      }, 
+      "v1.3.1": {
+        "v1.4.0": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v140">v1.4.0</a></p>`,
+        "v1.4.1": `<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575L6.457 1.047zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-.25-5.25a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5z"></path></svg></span> <code>Action required</code> - See <a href="#v141">v1.4.1</a></p>`,
+      }, 
+      "v1.4.0": {
+        "v1.4.1": "Auto",
+      }
+    }
+    const div = document.getElementById('migration-info');
+    div.innerHTML = '';
+
+    if (cversion === tversion) {
+       div.innerHTML = `<div class="admonition question">
+            <p class="admonition-title">Let's talk</p>
+            <p>We're not sure that's really useful. Coffee instead ?</p>
+            </div>`;
+        return;
+    }
+
+    if (cversion in map) {
+      if (tversion in map[cversion]) {
+        if (map[cversion][tversion] == 'Auto') {
+          div.innerHTML = `<div class="admonition success">
+            <p class="admonition-title">Good news</p>
+            <p>`+ cversion +` can be upgraded to `+ tversion + ` automatically</p>
+            </div>`
+            return;
+        } else {
+          div.innerHTML = `<div class="admonition danger">
+            <p class="admonition-title">Caution</p>
+            <p>`+ map[cversion][tversion] +`</p>
+            </div>`
+          return;
+        }
+      } 
+    } 
+    div.innerHTML = `<div class="admonition failure">
+    <p class="admonition-title">Incompatible</p>
+    <p>Migration from `+ cversion +` to `+ tversion + ` is not possible</p>
+    </div>`;
+    
+  }
+</script>
