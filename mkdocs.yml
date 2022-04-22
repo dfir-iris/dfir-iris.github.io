@@ -8,6 +8,7 @@ theme:
   features:
     - navigation.top
     - navigation.indexes
+    - content.code.annotate
   palette:
     primary: indigo
     accent: indigo

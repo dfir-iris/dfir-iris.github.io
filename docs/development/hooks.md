@@ -1,4 +1,4 @@
-# IRIS Hooks 
+# Hooks 
 
 !!! tip "*Introduced in IRIS v1.4.0*"
 

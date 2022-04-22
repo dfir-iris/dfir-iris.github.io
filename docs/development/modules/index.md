@@ -15,7 +15,7 @@ Except for some triggers for processor modules, all tasks provided by DIMs are r
 Both types of DIMs have the same structure, they only differ in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named ``IrisModuleInterface`` - available [here](https://github.com/dfir-iris/iris-module-interface) - which provides the basic structure and methods of a module. 
 
 !!! hint 
-    To quickly start writing a new module, one can follow [these tutorials](/development/quick_start/processor/).
+    To quickly start writing a new module, one can follow [these tutorials](/development/modules/quick_start/processor/).
 
 ## Overview
 Modules are instantiated upon actions (hooks, triggers, user actions) and this occurs each time the said actions occur. It implies the initiation of a module has to be very quick. In most of the case, the ``__init__`` method should not even be overwritten.   
@@ -25,7 +25,7 @@ They can live either in the worker or the web-app, depending on their type and a
 
 The graph below shows two modules of different types running in the worker and interacting with external elements.  
 
-![](../_static/mods_overview.png)
+![](../../_static/mods_overview.png)
 
 Modules don't have to handle the task creations or resource locks. This is handled by IRIS. They just need to process the data they received and return results in a predefined manner.   
 
@@ -125,4 +125,4 @@ _module_configuration = [
 
 The above example results in the following.  
 
-![](../_static/Modules_config_example.png)
+![](../../_static/Modules_config_example.png)

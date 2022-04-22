@@ -1,6 +1,5 @@
-# Environment
+# Setup
 
-This documentation is not a How-To develop IRIS. It only proposes a setup to easily develop and test IRIS.
 It follows an [issue](https://github.com/dfir-iris/iris-web/issues/39) raised on the Github of the project.  
 
 It recommends the use of a hybrid development environment, as most of the time only the web-app needs to be changed: 
