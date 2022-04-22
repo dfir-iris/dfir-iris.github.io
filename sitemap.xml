@@ -36,12 +36,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dfir-iris.github.io/development/code-tips/</loc>
+         <lastmod>2022-04-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dfir-iris.github.io/development/db-migration/</loc>
+         <lastmod>2022-04-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dfir-iris.github.io/development/environment/</loc>
          <lastmod>2022-04-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/hooks/</loc>
+         <lastmod>2022-04-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dfir-iris.github.io/development/structure/</loc>
          <lastmod>2022-04-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

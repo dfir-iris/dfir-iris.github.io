@@ -12,14 +12,14 @@
         <meta name="author" content="DFIR-IRIS Team">
       
       
-        <link rel="canonical" href="https://dfir-iris.github.io/development/hooks/">
+        <link rel="canonical" href="https://dfir-iris.github.io/development/db-migration/">
       
       <link rel="icon" href="../../_static/ico_white.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Hooks - Documentation</title>
+        <title>DB Migration - Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hooks" class="md-skip">
+        <a href="#db-migrations" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hooks
+              DB Migration
             
           </span>
         </div>
@@ -800,20 +800,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../db-migration/" class="md-nav__link">
-        DB Migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -825,55 +811,24 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Hooks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Hooks
+        DB Migration
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subscribing-and-unsubscribing" class="md-nav__link">
-    Subscribing and unsubscribing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-hooks" class="md-nav__link">
-    Available hooks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../hooks/" class="md-nav__link">
+        Hooks
+      </a>
     </li>
   
 
@@ -1050,35 +1005,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subscribing-and-unsubscribing" class="md-nav__link">
-    Subscribing and unsubscribing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-hooks" class="md-nav__link">
-    Available hooks
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1091,289 +1017,28 @@
                 
 
 
-<h1 id="hooks">Hooks</h1>
-<div class="admonition tip">
-<p class="admonition-title"><em>Introduced in IRIS v1.4.0</em></p>
+<h1 id="db-migrations">DB Migrations</h1>
+<p>In case a DB migration is needed, you need to provide an alembic migration script.  </p>
+<p><strong>In a terminal and from within the IRIS virtual env</strong> :  </p>
+<ol>
+<li>Go to <code>source</code> </li>
+<li>Issue the following command : <code>alembic -c app/alembic.ini revision -m "A few words to describe your changes"</code> </li>
+</ol>
+<p>This creates a new revision file <code>source &gt; app &gt; alembic &gt; versions</code>.  It's a Python file that basically describes what needs to be updated DB-wise. You can take example from the ones we already have generated. </p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>During your tests you might face the issue that Alembic does not apply your changes after you executed it once. It's because it keeps tracks of the latest applied revision in a table <code>alembic_version</code>. It doesn't know you changed the revision file.<br />
+In that case the trick is to connect to the DB, and then delete the entry in the alembic_version. This will force it to reapply all revisions at startup.
+If you're using the DB docker you can use the following:</p>
+<ul>
+<li><code>docker exec -it &lt;db_container_id&gt; /bin/sh</code> </li>
+<li><code>su postgres</code></li>
+<li><code>psql</code></li>
+<li><code>\c iris_db;</code> </li>
+<li><code>DELETE FROM alembic_version;</code> </li>
+<li>Restart the IRIS web app - your changes should be applied</li>
+</ul>
 </div>
-<p>Hooks are a mean for modules to react on specific events that occurs on IRIS. By subscribing to a hook, a module is automatically notified when the associated event occurs.  This offers a multitude of possibilities, from adding insight to IRIS objects, to pushing information to another platform or even changing how IRIS works.    </p>
-<h2 id="types">Types</h2>
-<p>There are 3 types of hooks. </p>
-<ul>
-<li><code>On preload</code>: Triggered before an object is processed and committed to database. It is triggered right after a request is received, and the data associated with the hook is usually the request content itself.  <strong>In most of the cases, modules should not subscribe to these hooks.</strong> </li>
-<li><code>On postload</code>: Triggered after an object is processed and committed to database. It is triggered after IRIS processed the request and the data associated with the hook is usually a list of SqlAlchemy objects (such as IOC, Assets, etc). </li>
-<li><code>Manual</code>: Triggered by manual action of a user. When a module subscribes to these hooks, it needs to provide a "menu option name" which will be displayed to users. When they click this option, the associated hook is triggered for this module only. Multiple manual hooks can be registered for one module.  </li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p><code>on_preload</code> hooks must run synchronously, i.e not queued in RabbitMQ. This effectively blocks the current user request until the module finishes the processing. We highly recommend to only use <code>on_postload</code> hooks for a better user experience. These hooks are transparent for users and rely on already verified and committed data. Handling <code>on_preload</code> hooks implies the received data is unsafe - directly coming from remote clients - and the module needs to process the data as fast as possible. </p>
-</div>
-<h2 id="subscribing-and-unsubscribing">Subscribing and unsubscribing</h2>
-<p>Two methods are provided by <code>IrisModuleInterface</code> to subscribe and unsubscribe to hooks.   </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  <span class="k">def</span> <span class="nf">register_to_hook</span><span class="p">(</span><span class="n">module_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                       <span class="n">iris_hook_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                       <span class="n">manual_hook_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                       <span class="n">run_asynchronously</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="k">def</span> <span class="nf">deregister_from_hook</span><span class="p">(</span><span class="n">module_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                           <span class="n">iris_hook_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
-</code></pre></div>
-<p>The registration method expects the following arguments: </p>
-<ul>
-<li><code>module_id</code>: The ID of the calling module. This information is given by IRIS when the <code>register_hooks</code> method is called. </li>
-<li><code>iris_hook_name</code>: The name of the hook to which subscribe. This must be one of the hook listed in the section below. </li>
-<li><code>manual_hook_name</code>: The name of the UI menu that is provided to users if the registration concerns a manual hook. If nothing is provided, IRIS will create a name composed as follows: <code>&lt;module_name&gt;::&lt;hook_name&gt;</code>. This value is ignored if the signal is not manual.  </li>
-<li><code>run_asynchronously</code>: Set to True (default) to run the module in a RabbitMQ task upon hook triggering. If set to False, the module is called immediately, which have for effect to effectively block the current user request until the module finishes. This is the behavior to use for <code>on_preload</code> hooks. <strong>However</strong>, we strongly recommend the use of <code>on_postload</code> hooks to prevent any unwanted (see warning section above). </li>
-</ul>
-<p>The deregistration method expects the following arguments:  </p>
-<ul>
-<li><code>module_id</code>: The ID of the calling module. This information is given by IRIS when the <code>register_hooks</code> methods is called. </li>
-<li><code>iris_hook_name</code>: The name of the hook to which unsubscribe. If the module is not subscribed to the specified hook the function returns without errors. </li>
-</ul>
-<p>Please see the <a href="/development/modules/">modules documentation</a> for more details on how to implement these methods.  </p>
-<h2 id="available-hooks">Available hooks</h2>
-<p>The following hooks are natively available for subscription.  </p>
-<table>
-<thead>
-<tr>
-<th>Hook name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>on_preload_case_create</td>
-<td>Triggered on case creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_case_create</td>
-<td>Triggered on case creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_case_delete</td>
-<td>Triggered on case deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_case_delete</td>
-<td>Triggered on case deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_asset_create</td>
-<td>Triggered on asset creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_asset_create</td>
-<td>Triggered on asset creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_asset_update</td>
-<td>Triggered on asset update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_asset_update</td>
-<td>Triggered on asset update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_asset_delete</td>
-<td>Triggered on asset deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_asset_delete</td>
-<td>Triggered on asset deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_asset</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_note_create</td>
-<td>Triggered on note creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_note_create</td>
-<td>Triggered on note creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_note_update</td>
-<td>Triggered on note update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_note_update</td>
-<td>Triggered on note update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_note_delete</td>
-<td>Triggered on note deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_note_delete</td>
-<td>Triggered on note deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_note</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_ioc_create</td>
-<td>Triggered on ioc creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_ioc_create</td>
-<td>Triggered on ioc creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_ioc_update</td>
-<td>Triggered on ioc update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_ioc_update</td>
-<td>Triggered on ioc update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_ioc_delete</td>
-<td>Triggered on ioc deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_ioc_delete</td>
-<td>Triggered on ioc deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_ioc</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_event_create</td>
-<td>Triggered on event creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_event_duplicate</td>
-<td>Triggered on event duplication, before commit in DB. This event only received the event ID which will be duplicated</td>
-</tr>
-<tr>
-<td>on_postload_event_create</td>
-<td>Triggered on event creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_event_update</td>
-<td>Triggered on event update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_event_update</td>
-<td>Triggered on event update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_event_delete</td>
-<td>Triggered on event deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_event_delete</td>
-<td>Triggered on event deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_event</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_evidence_create</td>
-<td>Triggered on evidence creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_evidence_create</td>
-<td>Triggered on evidence creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_evidence_update</td>
-<td>Triggered on evidence update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_evidence_update</td>
-<td>Triggered on evidence update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_evidence_delete</td>
-<td>Triggered on evidence deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_evidence_delete</td>
-<td>Triggered on evidence deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_evidence</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_task_create</td>
-<td>Triggered on task creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_task_create</td>
-<td>Triggered on task creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_task_update</td>
-<td>Triggered on task update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_task_update</td>
-<td>Triggered on task update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_task_delete</td>
-<td>Triggered on task deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_task_delete</td>
-<td>Triggered on task deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_task</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_global_task_create</td>
-<td>Triggered on global task creation, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_global_task_create</td>
-<td>Triggered on global task creation, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_global_task_update</td>
-<td>Triggered on task update, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_global_task_update</td>
-<td>Triggered on global task update, after commit in DB</td>
-</tr>
-<tr>
-<td>on_preload_global_task_delete</td>
-<td>Triggered on task deletion, before commit in DB</td>
-</tr>
-<tr>
-<td>on_postload_global_task_delete</td>
-<td>Triggered on global task deletion, after commit in DB</td>
-</tr>
-<tr>
-<td>on_manual_trigger_global_task</td>
-<td>Triggered upon user action</td>
-</tr>
-<tr>
-<td>on_preload_report_create</td>
-<td>Triggered on report creation, before generation in DB</td>
-</tr>
-<tr>
-<td>on_postload_report_create</td>
-<td>Triggered on report creation, before download of the document</td>
-</tr>
-<tr>
-<td>on_preload_activities_report_create</td>
-<td>Triggered on activities report creation, before generation in DB</td>
-</tr>
-<tr>
-<td>on_postload_activities_report_create</td>
-<td>Triggered on activities report creation, before download of the document</td>
-</tr>
-</tbody>
-</table>
 
   <hr>
 <div class="md-source-file">
@@ -1402,7 +1067,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../db-migration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DB Migration" rel="prev">
+        <a href="../code-tips/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Coding tips" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1411,20 +1076,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              DB Migration
+              Coding tips
             </div>
           </div>
         </a>
       
       
         
-        <a href="../modules/" class="md-footer__link md-footer__link--next" aria-label="Next: Modules" rel="next">
+        <a href="../hooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Hooks" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Modules
+              Hooks
             </div>
           </div>
           <div class="md-footer__button md-icon">
