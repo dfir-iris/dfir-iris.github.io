@@ -19,7 +19,7 @@
     
     
       
-        <title>Environment - Documentation</title>
+        <title>Setup - Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#environment" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Environment
+              Setup
             
           </span>
         </div>
@@ -717,6 +717,8 @@
       
         
           
+            
+          
         
           
         
@@ -726,10 +728,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
-          Development
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Development</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Development" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
@@ -737,6 +745,8 @@
           Development
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
           
             
               
@@ -754,12 +764,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Environment
+          Setup
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Environment
+        Setup
       </a>
       
         
@@ -814,21 +824,7 @@
   
     <li class="md-nav__item">
       <a href="../hooks/" class="md-nav__link">
-        IRIS Hooks
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../modules/" class="md-nav__link">
-        Modules
+        Hooks
       </a>
     </li>
   
@@ -850,16 +846,58 @@
       
         
           
+            
+          
+        
+          
         
       
       
-        <label class="md-nav__link" for="__nav_6_4">
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../modules/">Modules</a>
+          
+            <label for="__nav_6_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4_2" type="checkbox" id="__nav_6_4_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_4_2">
           Quick start
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Quick start" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_4">
+      <nav class="md-nav" aria-label="Quick start" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_4_2">
           <span class="md-nav__icon md-icon"></span>
           Quick start
         </label>
@@ -871,9 +909,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/processor/" class="md-nav__link">
+      <a href="../modules/quick_start/processor/" class="md-nav__link">
         Processor modules
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -998,9 +1043,8 @@
                 
 
 
-<h1 id="environment">Environment</h1>
-<p>This documentation is not a How-To develop IRIS. It only proposes a setup to easily develop and test IRIS.
-It follows an <a href="https://github.com/dfir-iris/iris-web/issues/39">issue</a> raised on the Github of the project.  </p>
+<h1 id="setup">Setup</h1>
+<p>It follows an <a href="https://github.com/dfir-iris/iris-web/issues/39">issue</a> raised on the Github of the project.  </p>
 <p>It recommends the use of a hybrid development environment, as most of the time only the web-app needs to be changed: </p>
 <ul>
 <li>Pycharm or any Python IDE for the web-app </li>
@@ -1045,7 +1089,7 @@ If the development results in DB modification, please use Alembic and add a migr
   <small>
     
       Last update:
-      2022-03-31
+      2022-04-22
     
   </small>
 </div>
@@ -1067,7 +1111,7 @@ If the development results in DB modification, please use Alembic and add a migr
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../python_client/references/users/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Users" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Development" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1076,20 +1120,20 @@ If the development results in DB modification, please use Alembic and add a migr
               <span class="md-footer__direction">
                 Previous
               </span>
-              Users
+              Development
             </div>
           </div>
         </a>
       
       
         
-        <a href="../hooks/" class="md-footer__link md-footer__link--next" aria-label="Next: IRIS Hooks" rel="next">
+        <a href="../hooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Hooks" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              IRIS Hooks
+              Hooks
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1160,7 +1204,7 @@ If the development results in DB modification, please use Alembic and add a migr
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
