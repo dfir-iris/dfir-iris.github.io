@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - Structure overview: structure.md
+  - Environment setup: environment.md
+  - Coding tips: code-tips.md
+  - DB Migration: db-migration.md
+  - Hooks: hooks.md
+  - Modules: modules
