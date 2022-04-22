@@ -12,14 +12,14 @@
         <meta name="author" content="DFIR-IRIS Team">
       
       
-        <link rel="canonical" href="https://dfir-iris.github.io/introduction/">
+        <link rel="canonical" href="https://dfir-iris.github.io/credits/">
       
       <link rel="icon" href="../_static/ico_white.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Introduction - Documentation</title>
+        <title>Credits - Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#credits" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Credits
             
           </span>
         </div>
@@ -227,21 +227,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         Introduction
       </a>
-      
     </li>
   
 
@@ -989,11 +979,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../credits/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Credits
       </a>
+      
     </li>
   
 
@@ -1030,31 +1030,29 @@
                 
 
 
-<h1 id="introduction">Introduction</h1>
-<p>In a nutshell, IRIS is a collaborative platform for incident response analysts allowing to share investigations at a technical level.<br />
-It's web application, so it can be either installed on a fixed-server, or on a laptop for roaming investigations where internet might not be available. </p>
-<p>It is born following the struggle to share long and complex investigations among analysts. Most of the current similar platforms are either commercial or targeting the incident handling and triage steps, not the investigation itself. </p>
-<p>The project is available at <a href="https://github.com/dfir-iris/iris-web">https://github.com/dfir-iris/iris-web</a></p>
-<div class="admonition hint">
-<p class="admonition-title">I've read enough, I want to try it</p>
-<p>Iris comes in dockers - you only need Docker Compose and you'll be set in a few minutes. 
-Follow <a href="/getting_started/">the guide</a>. </p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Disclaimer</p>
-<p>Iris is in its early stage. It can already be used in production, but please set backups of the database and DO NOT expose the interface on the Internet.
-We highly recommended the use of a private dedicated and secured network. </p>
-</div>
-<!-- !!! warning "Upgrading to v1.4.0 ? Please read the [upgrade documentation](/operations/upgrades/#v140)" -->
-
-<p><img align="center" alt="Timeline Example" src="../_static/timeline_speed.gif" /></p>
+<h1 id="credits">Credits</h1>
+<p>IRIS uses dozen of OS modules and this list is not exhaustive. If you developped something which is used in IRIS and does not figures here, you can <a href="mailto:contact@dfir-iris.org">contact us</a>. </p>
+<ul>
+<li><a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a></li>
+<li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
+<li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+<li><a href="https://docs.celeryq.dev/en/stable/index.html">Celery</a> </li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="https://themekita.com/demo-atlantis-lite-bootstrap/">Atlantis</a></li>
+<li><a href="https://www.mkdocs.org/">MkDocs</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Materials</a></li>
+<li><a href="https://github.com/TailGrids/play-tailwind">Tailwind</a></li>
+<li><a href="https://github.com/TheHive-Project/Cortex-Analyzers/blob/master/analyzers/MISP/mispclient.py">MISP module for Cortex</a></li>
+<li><a href="https://github.com/blacktop/virustotal-api">Virus Total Apis</a></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-04-06
+      2022-04-22
     
   </small>
 </div>
@@ -1076,7 +1074,7 @@ We highly recommended the use of a private dedicated and secured network. </p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../changelog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1085,26 +1083,11 @@ We highly recommended the use of a private dedicated and secured network. </p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Changelog
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../getting_started/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Quick Start
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

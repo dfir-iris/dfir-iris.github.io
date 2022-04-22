@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dfir-iris.github.io/credits/</loc>
+         <lastmod>2022-04-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dfir-iris.github.io/getting_started/</loc>
          <lastmod>2022-04-22</lastmod>
          <changefreq>daily</changefreq>
