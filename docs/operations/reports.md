@@ -6,9 +6,17 @@ The reports templates can be managed in ``Advanced`` > ``Templates``.
 !!! info
     This section is only available for users with the Admin role.
 
+There is two types of reports : 
+
+- **Investigation**; these contains the investigation data and can produces a custom-ready document
+- **Activities**; these contains activities done on the case and can be used as a follow-up  
+
 ## Structure of templates
 Reports templates are made of tags, which are then processed and filed by the template engine of Iris.   
-The templates can have any forms as soon as they respect the tags. An example of report is available in the source code of Iris, ``source > app > templates > docx_reports``.  
+The templates can have any forms as soon as they respect the tags. We are providing two example of reports. 
+
+- Example of investigation template : [Download](example_reports/iris_report_template.docx) 
+- Example of activities report template : [Download](example_reports/iris_activity_report_template.docx)
 
 The following tags are available. None are mandatory. If a tag is mistyped, the generation step will produce an error message.   
 
