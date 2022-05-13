@@ -1085,9 +1085,18 @@ The reports templates can be managed in <code>Advanced</code> &gt; <code>Templat
 <p class="admonition-title">Info</p>
 <p>This section is only available for users with the Admin role.</p>
 </div>
+<p>There is two types of reports : </p>
+<ul>
+<li><strong>Investigation</strong>; these contains the investigation data and can produces a custom-ready document</li>
+<li><strong>Activities</strong>; these contains activities done on the case and can be used as a follow-up  </li>
+</ul>
 <h2 id="structure-of-templates">Structure of templates</h2>
 <p>Reports templates are made of tags, which are then processed and filed by the template engine of Iris. <br />
-The templates can have any forms as soon as they respect the tags. An example of report is available in the source code of Iris, <code>source &gt; app &gt; templates &gt; docx_reports</code>.  </p>
+The templates can have any forms as soon as they respect the tags. We are providing two example of reports. </p>
+<ul>
+<li>Example of investigation template : <a href="../example_reports/iris_report_template.docx">Download</a> </li>
+<li>Example of activities report template : <a href="../example_reports/iris_activity_report_template.docx">Download</a></li>
+</ul>
 <p>The following tags are available. None are mandatory. If a tag is mistyped, the generation step will produce an error message.   </p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -1171,7 +1180,7 @@ List objects can be looped:</p>
   <small>
     
       Last update:
-      2022-04-06
+      2022-05-13
     
   </small>
 </div>
