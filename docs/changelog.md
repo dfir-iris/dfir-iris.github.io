@@ -2,6 +2,29 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v1.4.3](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.3) <small>_ May 13, 2022 _</small> 
+
+**What's changed**
+
+- Managed IRIS updates from itself
+- Custom icons for assets - fixes [#44](https://github.com/dfir-iris/iris-web/issues/44) by @sebastiandemmer
+- IOCs link in timeline and graph - fixes [#50](https://github.com/dfir-iris/iris-web/issues/50) 
+- History of modifications in timeline
+- User id in timeline export as an option - fixes [#65](https://github.com/dfir-iris/iris-web/issues/65) 
+- Backup of database from the interface 
+- Minimisation of modals in cases 
+- New UI improvements in timeline 
+- New minimal notifications for almost all activities
+- Improved overall responsiveness and speed 
+- Improved error feedbacks to users
+- Improved load of tasks results by x10
+- Code cleaning
+- Multiple bug fixes
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v1.4.2...v1.4.3)
+
+**Important note: If you are coming from < v1.4.0 please see [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/).**
+
 ## [v1.4.2](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.2) <small>_ April 22, 2022 _</small> 
 !!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v142) if you are upgrading from v1.3.1 or lower." 
 
@@ -26,7 +49,7 @@ For upgrades instructions, please see the [Upgrades page](/operations/upgrades).
 * Fixes a [scrolling issue](https://github.com/dfir-iris/iris-web/pull/86) of the timeline when events are being popped 
 
 ## [v1.4.0](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.0) <small>_ April 6, 2022 _</small> 
-*A bug fixe exists for this version. See v1.4.1* 
+*A bug fixe exists for this version. See v1.4.3* 
 
 !!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
