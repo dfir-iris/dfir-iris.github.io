@@ -1,6 +1,11 @@
 # Q & A
 
 ## General questions
+#### Which version should I install ?
+The master branch is stable as all the development is done under the develop branch and merged once ready.  
+To ease the identification, each new version is tagged and a new release is published. We recommend using these.  
+```git checkout <tagged_version>```
+
 #### Is the project maintained ?
 Yes, IRIS is under heavy development. We are adding more and more features, led by feedbacks from the community.  
 
