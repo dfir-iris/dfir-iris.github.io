@@ -1,10 +1,10 @@
 openapi: 3.0.3
 info:
   title: IRIS
-  version: 1.0.2
+  version: 1.0.3
   description: |-
     IRIS API endpoints documentation. An API key is needed and can be found in every user profile under `My settings` > `API Key`. 
-    Applies to Iris v1.4.0 to v1.4.2. 
+    Applies to Iris v1.4.3 and onward. 
 
 
     This version introduces the concept of custom attributes. These JSON objects that are stored into almost all case objects such as Assets, IOCs, etc. They are defined by administrators or modules and can vary from one objet to another despite being of the same type.  Because of this, no definitive structure can be expected from these fields. They are all named ``custom_attributes``. 

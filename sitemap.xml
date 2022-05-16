@@ -2,162 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dfir-iris.github.io/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/changelog/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/credits/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/getting_started/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/introduction/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/roadmap/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/zqa/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/code-tips/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/db-migration/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/environment/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/hooks/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/structure/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/modules/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/development/modules/quick_start/processor/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/api/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/custom_attributes/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/reports/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/server_settings/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/tutorials/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/upgrades/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/modules/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/modules/mod_management/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/modules/natives/IrisMISP/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/operations/modules/natives/IrisVT/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/admin/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/case/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/customer/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/global_search/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/session/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.github.io/python_client/references/users/</loc>
-         <lastmod>2022-05-14</lastmod>
+         <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
