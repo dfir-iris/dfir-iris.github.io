@@ -27,6 +27,9 @@ Use the references below to check which API version applies to your Iris version
 | v1.3.0|	[API v1.0.1](../_static/iris_api_reference_v1.0.1.html) |
 | v1.3.1|	[API v1.0.1](../_static/iris_api_reference_v1.0.1.html) |
 | v1.4.0|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
+| v1.4.1|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
+| v1.4.2|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
+| v1.4.3|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
 
 ## How to use 
 The API token is used as a Bearer and needs to be present in the header `Authorization` when issuing requests. 
