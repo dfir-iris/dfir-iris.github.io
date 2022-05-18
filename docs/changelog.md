@@ -1,6 +1,19 @@
 # Changelog
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
+!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
+
+
+## [v1.4.4](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.4) <small>_ May 18, 2022 _</small> 
+
+**What's Changed**
+
+- Implementation of bulk events editing by @sebastiandemmer in [#110](https://github.com/dfir-iris/iris-web/pull/110)
+- Fixes context switch button doesn't load cases by @DevJoost in [#112](https://github.com/dfir-iris/iris-web/pull/112)
+- Fixes multiple minor bugs 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v1.4.3...v1.4.4)
+
 
 ## [v1.4.3](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.3) <small>_ May 13, 2022 _</small> 
 
@@ -23,10 +36,7 @@ For upgrades instructions, please see the [Upgrades page](/operations/upgrades).
 
 [Full Changelog](https://github.com/dfir-iris/iris-web/compare/v1.4.2...v1.4.3)
 
-**Important note: If you are coming from < v1.4.0 please see [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/).**
-
 ## [v1.4.2](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.2) <small>_ April 22, 2022 _</small> 
-!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v142) if you are upgrading from v1.3.1 or lower." 
 
 **Improvements** :   
 
@@ -44,14 +54,10 @@ For upgrades instructions, please see the [Upgrades page](/operations/upgrades).
 
 ## [v1.4.1](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.1) <small>_ April 8, 2022 _</small> 
  
-!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
-
 * Fixes a [scrolling issue](https://github.com/dfir-iris/iris-web/pull/86) of the timeline when events are being popped 
 
 ## [v1.4.0](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.0) <small>_ April 6, 2022 _</small> 
 *A bug fixe exists for this version. See v1.4.3* 
-
-!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
 * Hooks, adding the ability for modules to react on almost anything happening on the plateform in [#75](https://github.com/dfir-iris/iris-web/pull/75)
 * New type of modules that can handles hooks 
