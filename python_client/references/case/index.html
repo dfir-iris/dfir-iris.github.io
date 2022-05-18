@@ -824,6 +824,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dfir_iris_client.case.Case.filter_events" class="md-nav__link">
+    filter_events()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dfir_iris_client.case.Case.get_asset" class="md-nav__link">
     get_asset()
   </a>
@@ -966,6 +973,13 @@
           <li class="md-nav__item">
   <a href="#dfir_iris_client.case.Case.set_summary" class="md-nav__link">
     set_summary()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfir_iris_client.case.Case.trigger_manual_hook" class="md-nav__link">
+    trigger_manual_hook()
   </a>
   
 </li>
@@ -1593,6 +1607,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dfir_iris_client.case.Case.filter_events" class="md-nav__link">
+    filter_events()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dfir_iris_client.case.Case.get_asset" class="md-nav__link">
     get_asset()
   </a>
@@ -1735,6 +1756,13 @@
           <li class="md-nav__item">
   <a href="#dfir_iris_client.case.Case.set_summary" class="md-nav__link">
     set_summary()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfir_iris_client.case.Case.trigger_manual_hook" class="md-nav__link">
+    trigger_manual_hook()
   </a>
   
 </li>
@@ -2231,7 +2259,7 @@ by administrators in the UI otherwise it is ignored.</p>
 
 
 <h3 id="dfir_iris_client.case.Case.add_event" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_event</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw_content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_assets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_summary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timezone_string</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_event</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw_content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_assets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_iocs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_summary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timezone_string</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 </h3>
@@ -2314,6 +2342,16 @@ by administrators in the UI otherwise it is ignored.</p>
                 <code>list</code>
           </td>
           <td><p>List of assets to link with this event</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>linked_iocs</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>List of IOCs to link with this event</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3946,6 +3984,80 @@ it might not indicate the case doesn't exist but might be the result of a reques
 
 
 
+<h3 id="dfir_iris_client.case.Case.filter_events" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">filter_events</span><span class="p">(</span><span class="n">filter_str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns a list of events from the timeline, filtered with the same query types used in
+the UI.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>filter_str</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>Filter the timeline as in the UI</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cid</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>Case ID</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>APIResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h3 id="dfir_iris_client.case.Case.get_asset" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_asset</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -5313,6 +5425,111 @@ should probably be only used when setting a new case.</p>
 
 
 
+<h3 id="dfir_iris_client.case.Case.trigger_manual_hook" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">trigger_manual_hook</span><span class="p">(</span><span class="n">hook_ui_name</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">target_type</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Triggers a module hook call. These can only be used with manual hooks. The request is sent to the target
+module and processed asynchronously. The server replies immediately after queuing the task. Success feedback
+from this endpoint does not implies the hook processing was successful.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>hook_ui_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Hook name, as defined by the module on the UI</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>module_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Module associated with the hook name</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>targets</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>List of IDs of objects to be processed</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target_type</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Target type of targets</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cid</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>Case ID</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h3 id="dfir_iris_client.case.Case.update_asset" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">update_asset</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">asset_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">analysis_status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">additional_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ioc_links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compromised</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_sync</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -5503,7 +5720,7 @@ by administrators in the UI otherwise it is ignored.</p>
 
 
 <h3 id="dfir_iris_client.case.Case.update_event" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">update_event</span><span class="p">(</span><span class="n">event_id</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw_content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_assets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_summary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timezone_string</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">update_event</span><span class="p">(</span><span class="n">event_id</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw_content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_assets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linked_iocs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_graph</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">display_in_summary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timezone_string</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 </h3>
@@ -5596,6 +5813,16 @@ by administrators in the UI otherwise it is ignored.</p>
                 <code>list</code>
           </td>
           <td><p>List of assets to link with this event</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>linked_iocs</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>List of IOCs to link with this event</p></td>
           <td>
                 <code>None</code>
           </td>
