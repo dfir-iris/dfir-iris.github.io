@@ -1,11 +1,3 @@
 nav:
   - Home: index.md
   - Introduction: introduction.md
-  - Quick Start: getting_started.md
-  - Operations: operations
-  - Python client: python_client
-  - Development: development
-  - Q&A: zqa.md
-  - Roadmap : roadmap.md
-  - Changelog: changelog.md 
-  - Credits: credits.md

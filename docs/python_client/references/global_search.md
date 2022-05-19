@@ -1,1 +1,0 @@
-::: dfir_iris_client.global_search

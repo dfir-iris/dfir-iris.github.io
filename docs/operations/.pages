@@ -1,8 +1,0 @@
-nav:
-  - API: api.md
-  - Reports: reports.md
-  - Custom attributes: custom_attributes.md
-  - Server settings: server_settings.md
-  - Modules: modules
-  - Upgrades: upgrades.md 
-  - Tutorials: tutorials.md

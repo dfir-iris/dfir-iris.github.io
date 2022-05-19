@@ -13,6 +13,8 @@ theme:
     primary: indigo
     accent: indigo
   custom_dir: overrides
+  static_templates:
+    - 404.html
   
 
 extra_css:
